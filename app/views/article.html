@@ -1,0 +1,30 @@
+<div class="article">
+	<div class="container">
+		<h4>Article {{article.id}} (type: {{article.type}})</h4>
+	</div>
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label for="article_title_{{article.id}}" class="control-label col-lg-3">Article Title</label>
+			<div class="col-lg-9">
+				<input class="form-control" id="article_title_{{article.id}}" ng-model="article.title">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="article_title_size_{{article.id}}" class="control-label col-lg-3">Article Title Size (in pixels)</label>
+			<div class="col-lg-9">
+				<input id="article_title_size_{{article.id}}" class="form-control" type="number" ng-model="article.title_size">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="article_body_{{article.id}}" class="control-label col-lg-3">Article Body</label>
+			<div class="col-lg-9">
+				<textarea class="form-control article-body" id="article_body_{{article.id}}" ng-model="article.body"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="pull-right">
+				<button ng-click="deleteArticle(article.id)" type="button" class="btn btn-warning">Delete Article</button>
+			</div>
+		</div>
+	</div>
+</div>
