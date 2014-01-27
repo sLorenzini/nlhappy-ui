@@ -64,7 +64,7 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams) {
 	});
 
 	declareDelayedFunction($scope, 'updateNewsletterLanguage', 1000, function () {
-		$http.post($scope.update_language_url, angular.toJson($scope.newsletter_language));
+		$http.post($scope.language_url, angular.toJson($scope.newsletter_language));
 	});
 
 	$scope.addArticle = function()
