@@ -52,12 +52,14 @@
 			<div class="col-lg-9 col-lg-offset-3">
 				<table class="table">
 					<tr>
+						<th></th>
+						<th></th>
 						<th>Title</th>
 						<th>Style</th>
 						<th>URL</th>
 						<th></th>
 					</tr>
-					<tr ng-repeat='button in buttons' ng-controller='ButtonController' ng-include="'/views/button.html'"></tr>
+					<tr ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'"></tr>
 				</table>
 			</div>
 		</div>

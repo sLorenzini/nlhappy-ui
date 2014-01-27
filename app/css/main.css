@@ -28,3 +28,9 @@ img[ng-click]
 {
 	cursor: pointer;
 }
+
+img.medium
+{
+	width: 32px;
+	height: 32px;
+}

@@ -16,11 +16,7 @@ nl.controller('ArticleController', function($scope, $http) {
 
 	$http.get(apiURL('/articles/'+$scope.article.id+'/buttons'))
 	.success(function(data) {
-		$scope.buttons = {};
-		for(var b in data.data)
-		{
-			$scope.buttons[data.data[b].id] = data.data[b];
-		}
+		$scope.buttons = data.data;
 	});
 
 	declareDelayedFunction($scope, 'updateArticle', 1000, function() {
@@ -31,9 +27,14 @@ nl.controller('ArticleController', function($scope, $http) {
 	{
 		$http.post(apiURL('/articles/'+$scope.article.id+'/buttons'))
 		.success(function (data){
-			$scope.buttons[data.data.id] = data.data;
+			$scope.buttons.push(data.data);
 		});
 	};
+
+	$scope.buttonOrderProp = function(button)
+	{
+		return parseInt(button.position);
+	}
 
 	$scope.moveUp = function()
 	{
