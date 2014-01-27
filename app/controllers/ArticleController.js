@@ -69,4 +69,9 @@ nl.controller('ArticleController', function($scope, $http) {
 		});
 	};
 
+	$scope.ucfirst = function(string)
+	{
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
 });

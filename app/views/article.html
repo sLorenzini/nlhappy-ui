@@ -1,5 +1,5 @@
 <div class="article container">
-	<h4>Article {{article.id}} (type: {{article.type}}, pos: {{article.position}})</h4>
+	<h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4>
 	<img ng-click="moveUp()" src="/img/up.png" title="Move article UP.">
 	<img ng-click="moveDown()" src="/img/down.png" title="Move article DOWN.">
 
