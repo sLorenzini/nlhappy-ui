@@ -1,5 +1,6 @@
 nl.controller('ArticleController', function($scope, $http) {
 	
+	$scope.article_types = ['default', 'footer']
 	$scope.article.title_size = parseInt($scope.article.title_size);
 
 	var first = true;
@@ -20,6 +21,7 @@ nl.controller('ArticleController', function($scope, $http) {
 	});
 
 	declareDelayedFunction($scope, 'updateArticle', 1000, function() {
+		console.log("updateArticle");
 		$http.post(apiURL('/articles/'+$scope.article.id), angular.toJson($scope.article));
 	});
 

@@ -94,6 +94,6 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams) {
 
 	$scope.articleOrderProp = function (article)
 	{
-		return parseInt(article.position);
+		return article.type + ("0000000000"+parseInt(article.position)).slice(-10);
 	}
 });

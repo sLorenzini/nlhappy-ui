@@ -23,9 +23,14 @@
 	</tr>
 </table>
 
-<h3>Newsletter Title and Edito</h3>
+<div ng-if="!newsletter_language">
+	Please select a language to view / edit.
+</div>
+
 
 <div ng-if="newsletter_language">
+	<h3>Newsletter Title and Edito</h3>
+
 	<div class="form-horizontal">
 		<div class="form-group">
 			<label for="title" class="control-label col-lg-3">Newsletter Title</label>
@@ -46,18 +51,11 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div ng-if="!newsletter_language">
-	Please select a language to view / edit.
-</div>
 
-<h3>Newsletter Articles</h3>
+	<h3>Newsletter Articles</h3>
 
-<div ng-if="!articles || articles.length === 0">
-	You have not defined any article for this language yet.
+	<div ng-repeat="(position_in_array, article) in articles | orderBy:articleOrderProp" ng-controller="ArticleController" ng-include="'/views/article.html'">
+	</div>
+
+	<button ng-click="addArticle()" type="button" class="btn btn-default">Add Article</button>
 </div>
-
-<div ng-repeat="(position_in_array, article) in articles | orderBy:articleOrderProp" ng-controller="ArticleController" ng-include="'/views/article.html'">
-</div>
-
-<button ng-click="addArticle()" type="button" class="btn btn-default">Add Article</button>
