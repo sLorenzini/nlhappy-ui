@@ -50,13 +50,8 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams) {
 
 				$scope.articles_url = $scope.language_url+'/articles';
 
-				$scope.articles = {};
-
 				$http.get($scope.articles_url).success(function(data) {
-					for(var a in data.data)
-					{
-						$scope.articles[data.data[a].id] = data.data[a];
-					}
+					$scope.articles = data.data;
 				});
 			});
 		}
@@ -77,19 +72,28 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams) {
 		if ($scope.articles)
 		{
 			$http.post($scope.articles_url).success(function (data){
-				$scope.articles[data.data.id] = data.data;
+				data.data.position = data.data.position+"";
+				$scope.articles.push(data.data);
 			});
 		}
+		console.log($scope.articles);
 	};
 
-	$scope.deleteArticle = function(article_id)
+	$scope.deleteArticle = function(position_in_array)
 	{
-		$http.post(apiURL('/articles/'+article_id+'/delete'))
+		var article = $scope.articles[position_in_array];
+
+		$http.post(apiURL('/articles/'+article.id+'/delete'))
 		.success(function(data) {
 			if (data.success)
 			{
-				delete $scope.articles[article_id];
+				$scope.articles.splice(position_in_array, 1);
 			}
 		});
+	};
+
+	$scope.articleOrderProp = function (article)
+	{
+		return parseInt(article.position);
 	}
 });

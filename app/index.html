@@ -9,14 +9,29 @@
 	</head>
 	<body ng-app="nl">
 
-		<div class="container">
-			<h1>Newsletter Happy MGMT</h1>
+		<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <a href="/" class="navbar-brand">NL Happy</a>
+		    </div>
+		    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+		      <ul class="nav navbar-nav">
+		        <li>
+		          <a href="/#/newsletters">Newsletters</a>
+		        </li>
+		      </ul>
+		    </nav>
+		  </div>
+		</header>
+
+		<div id="main" class="container">
 			<div ng-view>
 		</div>
 
 		<script src="/js/util.js"></script>
 		<script src="/js/nl.js"></script>
 		<script src="/controllers/IndexController.js"></script>
+		<script src="/controllers/ButtonController.js"></script>
 		<script src="/controllers/ArticleController.js"></script>
 		<script src="/controllers/NewslettersController.js"></script>
 		<script src="/controllers/NewsletterController.js"></script>

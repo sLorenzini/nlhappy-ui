@@ -53,11 +53,11 @@
 
 <h3>Newsletter Articles</h3>
 
-<div ng-if="!articles || (Object.keys(articles).length === 0)">
+<div ng-if="!articles || articles.length === 0">
 	You have not defined any article for this language yet.
 </div>
 
-<div ng-repeat="article in articles | orderBy:position" ng-controller="ArticleController" ng-include="'/views/article.html'">
+<div ng-repeat="(position_in_array, article) in articles | orderBy:articleOrderProp" ng-controller="ArticleController" ng-include="'/views/article.html'">
 </div>
 
 <button ng-click="addArticle()" type="button" class="btn btn-default">Add Article</button>

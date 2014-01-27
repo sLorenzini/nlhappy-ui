@@ -7,16 +7,24 @@ div.article
 {
 	border: 1px solid #CCC;
 	margin-bottom: 15px;
-	padding-top: 15px;
-	padding-right: 15px;
 }
 
-div.article button
+.no-margin
 {
-	margin: 5px;
+	margin: 0;
 }
 
 textarea.article-body
 {
-	min-height: 400px;
+	min-height: 400px
+}
+
+div#main
+{
+	margin-top: 75px;
+}
+
+img[ng-click]
+{
+	cursor: pointer;
 }
