@@ -21,8 +21,11 @@ nl.controller('ArticleController', function($scope, $http) {
 	});
 
 	declareDelayedFunction($scope, 'updateArticle', 1000, function() {
-		console.log("updateArticle");
-		$http.post(apiURL('/articles/'+$scope.article.id), angular.toJson($scope.article));
+		$http.post(apiURL('/articles/'+$scope.article.id), angular.toJson($scope.article))
+		.success(function(data) {
+			// Just in case :)
+			$scope.article.position = data.data.position;
+		});
 	});
 
 	$scope.addButton = function()

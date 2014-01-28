@@ -9,6 +9,7 @@ function declareDelayedFunction(scope, name, timeout, body)
 
 	scope[name] = function ()
 	{
+		scope.status.message = "Waiting for "+name+"...";
 		var handle = delayedFunctionCalls[scope.$id][name];
 		if (handle)
 		{
@@ -16,6 +17,7 @@ function declareDelayedFunction(scope, name, timeout, body)
 		}
 
 		delayedFunctionCalls[scope.$id][name] = window.setTimeout(function () {
+			scope.status.message = '';
 			scope.$apply(body);
 		}, timeout);
 	};

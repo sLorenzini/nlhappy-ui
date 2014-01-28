@@ -7,7 +7,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
 	</head>
-	<body ng-app="nl">
+	<body ng-app="nl" ng-controller="MainController">
 
 		<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
 		  <div class="container">
@@ -20,6 +20,11 @@
 		          <a href="/#/newsletters">Newsletters</a>
 		        </li>
 		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li>
+		          <p class="navbar-text {{status.klass}}">{{status.message}}</p>
+		        </li>
+		      </ul>
 		    </nav>
 		  </div>
 		</header>
@@ -30,6 +35,7 @@
 
 		<script src="/js/util.js"></script>
 		<script src="/js/nl.js"></script>
+		<script src="/controllers/MainController.js"></script>
 		<script src="/controllers/IndexController.js"></script>
 		<script src="/controllers/ButtonController.js"></script>
 		<script src="/controllers/ArticleController.js"></script>

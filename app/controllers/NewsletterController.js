@@ -1,4 +1,4 @@
-nl.controller('NewsletterController', function($scope, $http, $routeParams) {
+nl.controller('NewsletterController', function($scope, $http, $routeParams, $location, $anchorScroll) {
 	$http.get(apiURL('/newsletters/'+$routeParams.newsletter_id)).success(function(data) {
 		$scope.newsletter = data.data;
 		$scope.newsletter.number = parseInt($scope.newsletter.number);
@@ -74,9 +74,10 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams) {
 			$http.post($scope.articles_url).success(function (data){
 				data.data.position = data.data.position+"";
 				$scope.articles.push(data.data);
+				/*$location.hash('article_'+data.data.id);
+				$anchorScroll();*/
 			});
 		}
-		console.log($scope.articles);
 	};
 
 	$scope.deleteArticle = function(position_in_array)
@@ -92,8 +93,19 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams) {
 		});
 	};
 
+	$scope.deleteNewsletter = function()
+	{
+		$http.post(apiURL('/newsletters/'+$scope.newsletter.id+'/delete'))
+		.success(function (data) {
+			if(data.success)
+			{
+				$location.path('/newsletters');
+			}
+		});
+	};
+
 	$scope.articleOrderProp = function (article)
 	{
 		return article.type + ("0000000000"+parseInt(article.position)).slice(-10);
-	}
+	};
 });

@@ -24,7 +24,7 @@ div#main
 	margin-top: 75px;
 }
 
-img[ng-click]
+[ng-click]
 {
 	cursor: pointer;
 }
@@ -33,4 +33,19 @@ img.medium
 {
 	width: 32px;
 	height: 32px;
+}
+
+div.bottom
+{
+	margin-top: 50px;
+}
+
+div.article
+{
+	padding-bottom: 10px;
+}
+
+div.pull-right>button
+{
+	margin: 15px;
 }
