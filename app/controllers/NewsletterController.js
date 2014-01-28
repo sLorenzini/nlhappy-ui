@@ -74,8 +74,10 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 			$http.post($scope.articles_url, {type: $scope.shared.default_article_type}).success(function (data){
 				data.data.position = data.data.position+"";
 				$scope.articles.push(data.data);
-				/*$location.hash('article_'+data.data.id);
-				$anchorScroll();*/
+				/*
+				$location.hash('article_'+data.data.id);
+				$anchorScroll();
+				*/
 			});
 		}
 	};
