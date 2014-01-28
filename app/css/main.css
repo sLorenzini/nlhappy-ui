@@ -49,3 +49,10 @@ div.pull-right>button
 {
 	margin: 15px;
 }
+
+div.article-title
+{
+	color: #777;
+	font-weight: bold;
+	line-height: 34px;
+}
