@@ -1,102 +1,1106 @@
-<div ng-include="'/includes/_header.html'"></div>
+
+<!doctype html>
+<html>
+	<head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title><!--TODO--></title>
+    <link href="http://www.prestashop.com/images/favicon.ico" rel="shortcut icon">
+      
+    <style type="text/css">
+		/* Fonts and Content */
+		body { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
+
+		/* Landscape phones and down */
+
+		@media only screen and (max-width: 500px) { 
+			
+			table[class=w10], td[class=w10], img[class=w10] { width:15px !important;} 
+			table[class=w30], td[class=w30], img[class=w30] { width:15px !important; }				
+			table[class=w35], td[class=w35], img[class=w35] { width:15px !important; }				
+			table[class=w100], td[class=w100], img[class=w100] { width:50px !important; }  
+			table[class=w140], td[class=w140], img[class=w140] { width:180px !important; text-align:center;}
+			table[class=w400], td[class=w400], img[class=w400] { width:250px !important;}
+			table[class=w660], td[class=w660], img[class=w660] { width:458px !important; }
+			td[class=w20], img[class=w20]{ display:none !important; }    
+			img[class=w660imgempty]{width:455px;}
+			
+				 /*3 lines */
+				table[class=w180], td[class=w180] {width:464px !important; display:block;}
+				table[class=wtableedito], td[class=wtableedito], img[class=wtableedito]{width:458px !important; display:block;margin-bottom:10px}
+				table[class=wsummary], td[class=wsummary], img[class=wsummary]{width:458px !important; display:block;}
+			
+				/* css header */
+				table[class=w400click], td[class=w400click], img[class=w400click] { width:250px !important; display:block !important}
+				td[class=w20header] { width:15px !important; }  
+				td[class=wspace_header], img[class=wspace_header]{ width:10px !important }
+				td[class=wnewsletter_text]{ padding-top:20px;width:220px !important; display:block;}
+				span[class=wintrotext]{ font-size:25px !important;padding-left: 5px;}	
+
+				/* css edito */
+				table[class=w460], td[class=w460], img[class=w460] {width:455px !important;}
+				table[class=wtableedito], td[class=wtableedito] {border:2px solid #e7e7e8;}
+				table[class=wsummary], td[class=wsummary] {border:2px solid #e7e7e8;}
+				img[class=weditomenu] {padding-left:10px;}
+				
+				/* css summary */
+				td[class=wsummary], img[class=wsummary]{display:none !important}
+				
+				/*css content*/
+				table[class=wtablecontent] {border:2px solid #e7e7e8; width:462px !important;} /** global table **/
+				td[class=wtablecontent] {width:445px !important}
+				table[class=w660content], td[class=w660content]{width:439px !important;display:block;}
+				span[class=titlearticle]{font-size:20px !important}
+				td[class=wleftrightcontent] {border-left:none !important;border-right:none !important; width:15px !important;} /*** margin left and right ***/
+				table[class=w180content] {width:440px !important;}
+				td[class=w180contentimg]{width:435px !important;display:inline-block;}
+				td[class=w180contenttext] {width:435px !important;display:inline-block;margin-top:15px;}
+				td[class=wbtnmore] {display:none;}
+				td[class=btnbottommore] {display:inline-block;width: 435px;}
+				img[class=w180content] , img[class=wbtnmore] {width:220px !important;display:block;}
+				img[class=w180contentimg]{width:285px !important;display:block;margin:0 85px;}
+				img[class=btnbottommore_big] {float: left;margin: 0 125px !important;width: 177px !important;}
+				img[class=btnbottommore_little] {display:block;float: left;margin: 0 165px !important;}
+				a[class=w180], img[class=w180] {width:220px !important; display:block;}
+				td[class=wborderblockcontent]{border-bottom:1px solid #e7e7e8}
+				img[class=wborderblockcontent] {display:none !important}
+				
+				/*css vignettes*/
+				table[class=w660vig], td[class=w660vig]{width:458px !important;display:block;}
+				table[class=w660vigcontent], td[class=w660vigcontent]{width:458px !important;display:block;border-left:none !important; border-right:none !important}
+				table[class=w660global_vig], td[class=w660global_vig] {width:440px !important;display:block}
+				td[class=w660global_vig_first] {border-bottom:1px solid #E7E7E8;}
+				td[class=w660global_vig_last] {border-bottom:none;}
+				td[class=w25]{width:25px !important;}
+				span[class=spanvignettetitle]{width:auto !important;}
+				a[class=spanvignettelink]{display:block;width:440px !important;}
+				img[class=imgvignett]{width:275px !important;margin: auto;}
+				span[class=spanvignettecontent]{display: block;margin: 15px 15px 0;width: 420px;text-align: center;}
+				a[class=spanvignettebtn]{display: block;margin-top:15px}
+				td[class=w660vignettes] {width:460px !important;display:block;border-bottom:1px solid #E7E7E8;border-left: medium none !important;border-right: medium none !important;}
+				td[class=w660lastvignette] {width:460px !important;display:block;border-left: medium none !important;border-right: medium none !important;}
+				img[class=btn_vignette]{margin: auto;width: 171px !important;}
+				
+				/*css footer*/
+				td[class=wspacepicto], img[class=wspacepicto]{width:5px !important;}
+				td[class=wpictofooter]{width:35px !important;}
+				img[class=wpictofooter]{width:25px !important;height:25px!important}
+				table[class=wfollowus], td[class=wfollowus]{width:200px !important;display:block;}
+				td[class=wclick]{width:255px !important;}
+				span[class=wclick]{display:block;width:240px}
+				span[class=law]{display:block;width:455px}
+		} 
+
+		@media only screen and (min-width: 501px) and (max-width: 768px) { 
+			table[class=w10], td[class=w10], img[class=w10] { width:15px !important;} 
+			table[class=w30], td[class=w30], img[class=w30] { width:15px !important; }				
+			table[class=w35], td[class=w35], img[class=w35] { width:15px !important; }				
+			table[class=w100], td[class=w100], img[class=w100] { width:50px !important; }  
+			table[class=w140], td[class=w140], img[class=w140] { width:180px !important; text-align:center;}
+			table[class=w400], td[class=w400], img[class=w400] { width:250px !important;}
+			table[class=w660], td[class=w660], img[class=w660] { width:458px !important; }
+			td[class=w20], img[class=w20]{ display:none !important; }    
+			img[class=w660imgempty]{width:455px;}
+			
+				 /*3 lines */
+				table[class=w180], td[class=w180] {width:462px !important; display:block;}
+				table[class=wtableedito], td[class=wtableedito], img[class=wtableedito]{width:458px !important; display:block;margin-bottom:10px}
+				table[class=wsummary], td[class=wsummary], img[class=wsummary]{width:458px !important; display:block;}
+			
+				/* css header */
+				table[class=w400click], td[class=w400click], img[class=w400click] { width:250px !important; display:block !important}
+				td[class=w20header] { width:15px !important; }  
+				td[class=wspace_header], img[class=wspace_header]{ width:10px !important }
+				td[class=wnewsletter_text]{ padding-top:20px;width:220px !important; display:block;}
+				span[class=wintrotext]{ font-size:25px !important;padding-left: 5px;}	
+
+				/* css edito */
+				table[class=w460], td[class=w460], img[class=w460] {width:455px !important;}
+				table[class=wtableedito], td[class=wtableedito] {border:2px solid #e7e7e8;}
+				table[class=wsummary], td[class=wsummary] {border:2px solid #e7e7e8;}
+				img[class=weditomenu] {padding-left:10px;}
+				
+				/* css summary */
+				td[class=wsummary], img[class=wsummary]{display:none !important}
+				
+				/*css content*/
+				table[class=wtablecontent] {border:2px solid #e7e7e8; width:462px !important;} /** global table **/
+				td[class=wtablecontent] {width:445px !important}
+				table[class=w660content], td[class=w660content]{width:439px !important;display:block;}
+				span[class=titlearticle]{font-size:20px !important}
+				td[class=wleftrightcontent] {border-left:none !important;border-right:none !important; width:15px !important;} /*** margin left and right ***/
+				table[class=w180content] {width:440px !important;}
+				td[class=w180content]{width:220px !important;}
+				td[class=w180contentimg]{width:435px !important;display:inline-block;}
+				td[class=w180contenttext] {width:435px !important;display:inline-block;margin-top:15px;}
+				td[class=wbtnmore] {display:none;}
+				td[class=btnbottommore] {display:inline-block;width: 435px;}
+				img[class=w180content] , img[class=wbtnmore] {width:220px !important;display:block;}
+				img[class=w180contentimg]{width:285px !important;display:block;margin:0 85px;}
+				img[class=btnbottommore_big] {float: left;margin: 0 125px !important;width: 177px !important;}
+				img[class=btnbottommore_little] {display:block;float: left;margin: 0 165px !important;}
+				a[class=w180], img[class=w180] {width:220px !important; display:block;}
+				td[class=wborderblockcontent]{border-bottom:1px solid #e7e7e8}
+				img[class=wborderblockcontent] {display:none !important}
+				
+				/*css vignettes*/
+				table[class=w660vig], td[class=w660vig]{width:458px !important;display:block;}
+				table[class=w660vigcontent], td[class=w660vigcontent]{width:458px !important;display:block;border-left:none !important; border-right:none !important}
+				table[class=w660global_vig], td[class=w660global_vig] {width:440px !important;display:block}
+				td[class=w660global_vig_first] {border-bottom:1px solid #E7E7E8;}
+				td[class=w660global_vig_last] {border-bottom:none;}
+				td[class=w25]{width:25px !important;}
+				span[class=spanvignettetitle]{width:auto !important;}
+				a[class=spanvignettelink]{display:block;width:440px !important;}
+				img[class=imgvignett]{width:275px !important;margin: auto;}
+				span[class=spanvignettecontent]{display: block;margin: 15px 15px 0;width: 420px;text-align: center;}
+				a[class=spanvignettebtn]{display: block;margin-top:15px}
+				td[class=w660vignettes] {width:460px !important;display:block;border-bottom:1px solid #E7E7E8;border-left: medium none !important;border-right: medium none !important;}
+				td[class=w660lastvignette] {width:460px !important;display:block;border-left: medium none !important;border-right: medium none !important;}
+				img[class=btn_vignette]{margin: auto;width: 171px !important;}
+				
+				/*css footer*/
+				td[class=wspacepicto], img[class=wspacepicto]{width:5px !important;}
+				td[class=wpictofooter]{width:35px !important;}
+				img[class=wpictofooter]{width:25px !important;height:25px!important}
+				table[class=wfollowus], td[class=wfollowus]{width:200px !important;display:block;}
+				td[class=wclick]{width:255px !important;}
+				span[class=wclick]{display:block;width:240px}
+				span[class=law]{display:block;width:455px}
+		}
+
+
+		/* Mobile */
+
+		@media only screen and (max-device-width: 480px) { 
+			table[class=w10], td[class=w10], img[class=w10] { width:15px !important;} 
+			table[class=w30], td[class=w30], img[class=w30] { width:15px !important; }				
+			table[class=w35], td[class=w35], img[class=w35] { display:none !important; }			
+			table[class=w100], td[class=w100], img[class=w100] { width:50px !important; }  
+			table[class=w140], td[class=w140], img[class=w140] { width:150px !important; text-align:center;}
+			table[class=w400], td[class=w400], img[class=w400] { width:200px !important;}
+			table[class=w660], td[class=w660], img[class=w660] { width:305px !important; }
+			img[class=w660imgempty]{width:290px;}
+			
+				 /*3 lines */
+				table[class=w180], td[class=w180] {width:220px !important; display:block;}
+				table[class=wtableedito], td[class=wtableedito], img[class=wtableedito]{width:305px !important; display:block;margin-bottom:10px}
+			
+				/* css header */
+				table[class=w400click], td[class=w400click], img[class=w400click] { width:145px !important; display:block !important}
+				span[class=w400click]{font-size:10px !important}
+				td[class=w20header] { display:none !important; }  
+				img[class=wlogo]{ width:150px !important;height:41px}
+				td[class=wspace_header], img[class=wspace_header]{ width:10px !important }
+				td[class=wnewsletter_text]{ padding-top:22px;width:120px !important; display:block;}								
+				span[class=wnewsletter_text]{ font-size:15px !important}								
+				span[class=wintrotext]{ font-size:18px !important;padding-left:0;display:block}	
+
+				/* css edito */
+				table[class=w460], td[class=w460], img[class=w460] {width:250px !important;}
+				table[class=wtableedito], td[class=wtableedito] {border:2px solid #e7e7e8;}
+				img[class=weditomenu] {padding-left:10px;}
+				
+				/* css summary */
+				table[class=w185], td[class=w185], img[class=w185] {width:230px !important;}
+				td[class=wsummary], img[class=wsummary]{display:none !important}
+				
+				/*css content*/
+				table[class=wtablecontent] {border:2px solid #e7e7e8; width:310px !important;} /** global table **/
+				td[class=wtablecontent] {width:305px !important}
+				table[class=w660content], td[class=w660content]{width:270px !important;display:block;}
+				span[class=titlearticle]{font-size:20px !important}
+				td[class=wleftrightcontent] {border-left:none !important;border-right:none !important; width:15px !important;}	/*** margin left and right ***/
+				td[class=w180content], img[class=w180content] {width:230px !important;display:block;}
+				td[class=w180contentimg]{width:230px !important;display:inline-block;}
+				td[class=w180contentsmall] {width:200px !important;display:block;}
+				table[class="w180content"]{width:210px !important}
+				td[class=wbtnmore]{display:none;}
+				img[class=w180contentimg] {width:270px !important;display:block;margin: 0 18px;}
+				td[class=btnbottommore] {display:inline-block;width: 270px;}
+				img[class=btnbottommore_big] {float: left;margin: 0 55px !important;width: 177px !important;}
+				img[class=btnbottommore_little] {display:block;float: left;margin: 0 85px !important;}
+				td[class=w180contenttext] {width:275px !important;display:block;}
+				table[class=w10], td[class=w10], img[class=w10] { width:15px !important;display:block } 
+				
+				/*css vignettes*/
+				table[class=w660vig], td[class=w660vig]{width:305px !important;display:block;}
+				table[class=w660vigcontent], td[class=w660vigcontent]{width:305px !important;display:block;border-left:none !important; border-right:none !important}
+				table[class=w660global_vig], td[class=w660global_vig] {width:277px !important;display:block}
+				td[class=w660global_vig_first] {border-bottom:1px solid #E7E7E8;}
+				td[class=w660global_vig_last] {border-bottom:none;}
+				img[class=imgvignett] {width:275px !important;display:block;margin-bottom:15px;}
+				td[class=w25]{width:13px !important;}
+				span[class=spanvignettetitle]{width:auto !important;}
+				a[class=spanvignettelink]{display:block;width:260px !important;}
+				img[class=imgvignett]{width:275px !important;margin: auto;}
+				span[class=spanvignettecontent]{display: block;float: left;margin-left: 15px;width: 260px;text-align: center;padding-bottom:10px}
+				a[class=spanvignettebtn]{display: block;margin-top:15px;}
+				td[class=w660vignettes] {width:260px !important;display:block;border-bottom:1px solid #E7E7E8;border-left: medium none !important;border-right: medium none !important;}
+				td[class=w660lastvignette] {width:260px !important;display:block;border-left: medium none !important;border-right: medium none !important;}
+				img[class=btn_vignette]{margin: auto;width: 171px !important;}
+			
+				
+				/*css footer*/
+				td[class=wspacepicto], img[class=wspacepicto]{width:5px !important;}
+				td[class=wpictofooter]{width:35px !important;}
+				img[class=wpictofooter]{width:30px !important;height:30px!important}
+				table[class=wfollowus], td[class=wfollowus]{width:140px !important;display:block;}
+				td[class=wclick]{display:block;width:290px !important;margin-top:15px}
+				span[class=wclick]{display:block;width:290px}
+				span[class=law]{display:block;width:290px;text-align:left !important;}
+		}
+	</style>
+</head>
+<body marginheight="0" topmargin="0" marginwidth="0" leftmargin="0" bgcolor="#f2f2f3" style="-webkit-text-size-adjust:none;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3" style="border-bottom:1px solid #000;">
+		<tr>
+			<td bgcolor="#262830" align="center">
+			<!-- HEADER -->
+				<table class="w660" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#262830">
+					<tr>
+						<td class="w400click" width="485" align="left">
+							<font size="2" face="Arial" color="#909c9f">
+								<span class="w400click" style="font-size:12px;line-height:15px;display:block;">
+									<a style="color:#ffffff;text-decoration:none;" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&amp;link=http://newsletter.prestashop.com/newsletters/179/newsmail_en.html">Click here</a> if this email does not display correctly
+								</span>
+							</font>
+						</td>
+						<td class="w35" width="35">
+							<img class="w35" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" width="35" border="0" style="overflow:hidden"/> 
+						</td>
+						<td class="w140" width="140" align="right" ng-include="'/includes/_header-language.html'">
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3" style="border-bottom:1px solid #000;" >
+		<tr>
+			<td bgcolor="#363a45" align="center">
+			<!-- HEADER-->
+				<table class="w660" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#363a45">
+					<tr>
+						<td  class="w660" width="660" colspan="3">
+							<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="5" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden"/> 
+						</td>
+					</tr>
+					<tr>
+						<td class="w660" width="485" align="left">
+							<table class="w660" width="485" border="0" cellspacing="0" cellpadding="0" bgcolor="#363a45">
+								<tr>
+									<td class="w140" width="220">
+										<a target="_blank" href="http://www.prestashop.com/fr">
+											<img class="wlogo" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/logo/logo.png" alt="Prestashop" height="59" width="216" style="border:none;display:block;" />
+										</a>
+									</td>
+									<td class="wspace_header" width="15">
+										<img class="wspace_header" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="90" width="15" border="0" style="display:block;overflow:hidden"/> 
+									</td>
+									<td width="1">
+										<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_header.png" alt="PS" height="59" width="1" border="0" style="display:block;overflow:hidden" /> 
+									</td>
+									<td class="wspace_header" width="15">
+										<img class="wspace_header" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="90" width="15" border="0" style="display:block;overflow:hidden" /> 
+									</td>
+									<td class="wnewsletter_text" width="234">
+										<font size="3" face="Arial" color="#ffffff">
+											<span class="wnewsletter_text" style="font-size:24px;">Newsletter #{{nl.newsletter.number}}</span> <br/>
+											<span class="wnewsletter_text" style="color:#7ac143;font-size:18px;">{{nl.newsletter.date}}</span>
+										</font>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td class="w20" width="35">
+							<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="25" width="35" border="0" style="overflow:hidden" /> 
+						</td>
+						<td class="w20" width="140" align="right" valign="center">
+							<img  align="right" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/img_nl.png" alt="PS" height="130" width="132" border="0" style="display:block;overflow:hidden" /> 
+						</td>
+					</tr>
+					<tr>
+						<td width="485" colspan="5" align="left">
+							<font size="3" face="Rockwell" color="#909c9f">
+								<span class="wintrotext"  style="font-size:27px;text-shadow: 1px 1px 1px #000;">The best E-commerce practices</span>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td  class="w660" width="660" colspan="3">
+							<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden" /> 
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
 
 <!-- Settings -->
+
+<!-- EDIT ////////////////////////////////////////////////////// -->
+
+
+
+
+<!-- END EDIT ////////////////////////////////////////////////// -->
 
 <!-- Edito -->
 
 <!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $edito-title The best of Google Analytics and SEO tips for e-commerce! -->
-<!-- $edito-title-size 24px -->
-<!-- $edito-description This week&rsquo;s edition, we&rsquo;re sharing some awesome tips to help you better strategize your marketing efforts to increase sales and traffic.<br/><br/>Don&rsquo;t miss out &ndash; there&rsquo;s tons of valuable information below to make your online store the ultimate success!<br/><br/>Read on! -->
+
+
+
 <!-- END EDIT ////////////////////////////////////////////////// -->
 
 <!-- Summary -->
 
-<!-- @include _summary-heading -->
-<!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $summary-item How to Use Google Analytics to Improve Marketing for your Online Store -->
-<!-- END EDIT ////////////////////////////////////////////////// -->
-<!-- @include _summary-item -->
-<!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $summary-item Enjoy 15% OFF all modules developed by OleaCorner! -->
-<!-- END EDIT ////////////////////////////////////////////////// -->
-<!-- @include _summary-item -->
-<!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $summary-item 5 Profitable Tips to Drastically Improve SEO for your Online Store -->
-<!-- END EDIT ////////////////////////////////////////////////// -->
-<!-- @include _summary-item -->
-<!-- @include _content-heading -->
+<img class="wsummary" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="12" width="660" border="0" style="display:block;overflow:hidden"/>
+<!-- CONTENT -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+	<tr>
+		<td bgcolor="#f2f2f3" align="center">
+			<!-- EDITO -->
+			<!-- EDITO / MENU -->
+			<table class="w660" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+				<tr>
+					<td class="w660" width="660" colspan="3">
+						<img class="wtableedito" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" width="660" border="0" style="display:block;overflow:hidden" /> 
+					</td>
+				</tr>
+				<tr>
+					<td class="w180" width="660">
+						<table class="w180" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+							<tr>
+								<td class="w20" width="660" colspan="3">
+									<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_top_edito_menu.png" alt="PS" height="15" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden" /> 
+								</td>
+							</tr>
+							<tr>
+								<td class="wtableedito" width="427" valign="top" bgcolor="#ffffff" style="border-left:2px solid #e7e7e8;border-right:2px solid #e7e7e8">
+									<table class="w660" width="427" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+										<tr>
+											<td class="w30" width="19" bgcolor="#ffffff">
+												&nbsp;
+											</td>
+											<td class="w20" width="34" valign="top" bgcolor="#ffffff"> 
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/week_{{nl.language.code}}.png" alt="edito" height="287" width="34" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+											<td class="w20" width="10" bgcolor="#ffffff">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+											<td class="w460" width="351"  bgcolor="#ffffff" valign="top" align="left">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+												<font size="3" face="Arial" color="#4d535e">
+													<span style="font-size:{{nl.title_size}}px;line-height:30px;">{{nl.title}}</span>
+												</font>
+												<br/><br/>
+												<font size="2" face="Arial" color="#565e68">
+													<span style="font-size:13px;line-height:19px;text-align:justify;display:block;">{{nl.edito}}</span>
+												</font>
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="5" width="10" border="0" style="display:block;overflow:hidden"/>
+											</td>
+											<td class="w30" width="40" bgcolor="#ffffff">
+												&nbsp;
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td class="w20" width="13">
+									<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="13" border="0" style="display:block;overflow:hidden"/> 
+								</td>
+								<td class="wsummary" width="213" bgcolor="#ffffff" style="border-left:2px solid #e7e7e8;border-right:2px solid #e7e7e8" valign="top">
+									<table class="w660" width="213" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+										<tr>
+											<td class="w30" width="19" bgcolor="#ffffff">
+												&nbsp;
+											</td>
+											<td  class="w185" width="185" bgcolor="#ffffff">
+												<table class="w185" width="185" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+													<tr>
+														<td class="w185" width="185" bgcolor="#ffffff" colspan="3">
+															<img class="weditomenu" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="menu" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+														</td>
+													</tr>
+												</table>
+											</td>
+											<td class="w30" width="19" bgcolor="#ffffff">
+												&nbsp;
+											</td>
+										</tr>
+										<span ng-repeat='article in nl.articles | filter:{type:"default"} | orderBy:article.position' ng-include="'/includes/_summary-item.html'" include-replace>
+										</span>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="w20" width="660" colspan="3">
+									<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_bottom_edito_menu.png" alt="PS" height="6" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden"/> 
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
 
-<!-- Articles -->
+<img class="wsummary" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="12" width="660" border="0" style="display:block;overflow:hidden">
+<!-- MAIN CONTENT -->
+<table class="wtablecontent" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+	<tr>
+		<td class="w20" width="660" colspan="3">
+			<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/top_content.png" alt="edito" height="6" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="wleftrightcontent" width="20" style="border-left:1px solid #e7e7e8" bgcolor="#ffffff">
+			&nbsp;
+		</td>
+		<td class="wtablecontent" width="620" bgcolor="#ffffff">
+
+<table class="w660content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+	<tr>
+		<td class="w660content" width="620" >
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660content" width="620" align="left">
+			<font size="3" face="Arial" color="#4d535e">
+				<span class="titlearticle" style="font-size:24px;">How to Use Google Analytics to Improve Marketing for your Online Store</span>
+			</font>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660content" width="620">
+			<table class="w660content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+				<tr>
+					<td class="w180contentimg" width="220" align="center">
+						<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/blog/en/how-to-use-google-analytics-to-improve-marketing-for-your-online-store/" target="_blank">
+							<img class="w180contentimg" align="left" src="http://newsletter.prestashop.com/newsletters/179/img/tips-analytics.jpg" alt="Google Analytics" width="220" border="0" style="display:block;overflow:hidden"/>
+						</a>
+					</td>
+					<td class="w20" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="w180contenttext" width="390" align="right">
+						<font size="2" face="Arial" color="#565e68">
+							<span style="font-size:13px;text-align:justify;display:block;">Google Analytics is a powerful tool to understand the behavior of your visitors. It provides you with essential information to help you identify your visitors and how they interact with your online store. With Google Analytics you can find out what interests your visitors to improve your marketing efforts and increase e-commerce sales.<br/><br/>Read more about the six ways to use Google Analytics to improve marketing efforts and develop effective marketing strategies.</span>
+						</font>
+					</td>
+					<td class="w20" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w180content" width="620">
+			<table class="w180content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+				<tr>
+					<td class="wbtnmore" width="440">
+						<img class="wbtnmore" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="400" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="wbtnmore" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="btnbottommore" width="180">
+						<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/blog/en/how-to-use-google-analytics-to-improve-marketing-for-your-online-store/" target="_blank" style="display:block;">
+							<img class="btnbottommore_big" align="right" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/next_button_en.png" alt="Read More" height="37" width="119" border="0" style="display:block;overflow:hidden"/>
+						</a>
+					</td>
+					<td class="w10" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="wborderblockcontent" width="660" colspan="3">
+			<img class="wborderblockcontent" align="right" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_bottom_content.png" alt="border" height="6" width="620" border="0" style="display:block;overflow:hidden"/>
+		</td>
+	</tr>
+</table>
+
+<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/>
 
 <!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $article-title How to Use Google Analytics to Improve Marketing for your Online Store -->
-<!-- $article-title-size 24px -->
-<!-- $article-description Google Analytics is a powerful tool to understand the behavior of your visitors. It provides you with essential information to help you identify your visitors and how they interact with your online store. With Google Analytics you can find out what interests your visitors to improve your marketing efforts and increase e-commerce sales.<br/><br/>Read more about the six ways to use Google Analytics to improve marketing efforts and develop effective marketing strategies. -->
-<!-- $article-link http://www.prestashop.com/blog/en/how-to-use-google-analytics-to-improve-marketing-for-your-online-store/ -->
-<!-- $article-button next_button -->
-<!-- $article-button-alt Read More -->
-<!-- $article-button-width 119 -->
-<!-- $article-image tips-analytics.jpg -->
-<!-- $article-image-alt Google Analytics -->
+
+
+
+
+
+
+
+
+
 <!-- END EDIT ////////////////////////////////////////////////// -->
-<!-- @include _article -->
-<!-- @include _article-separator -->
+<table class="w660content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+	<tr>
+		<td class="w660content" width="620" >
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660content" width="620" align="left">
+			<font size="3" face="Arial" color="#4d535e">
+				<span class="titlearticle" style="font-size:24px;">Enjoy 15% OFF all modules developed by OleaCorner!</span>
+			</font>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660content" width="620">
+			<table class="w660content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+				<tr>
+					<td class="w180contentimg" width="220" align="center">
+						<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://addons.prestashop.com/en/8_OleaCorner?utm_source=NewsletterEN&utm_medium=OleaCorner&utm_campaign=Addons2013" target="_blank">
+							<img class="w180contentimg" align="left" src="http://newsletter.prestashop.com/newsletters/179/img/addons-flash-oleacorner.jpg" alt="15% OFF OleaCorner" width="220" border="0" style="display:block;overflow:hidden"/>
+						</a>
+					</td>
+					<td class="w20" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="w180contenttext" width="390" align="right">
+						<font size="2" face="Arial" color="#565e68">
+							<span style="font-size:13px;text-align:justify;display:block;">Now through Saturday at midnight we're offering 15% off all OleaCorner developed modules. OleaCorner has created modules that will make selling easier and more effective for every online merchant!<br/><br/>From incentivizing your customers with gifts to creating prepaid accounts for your shoppers, OleaCorner has over a dozen unique modules to enhance your daily management and increase your sales.<br/><br/><strong>Take advantage of this limited time offer!<br/>Promo Code: FlashOlea</strong></span>
+						</font>
+					</td>
+					<td class="w20" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w180content" width="620">
+			<table class="w180content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+				<tr>
+					<td class="wbtnmore" width="440">
+						<img class="wbtnmore" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="400" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="wbtnmore" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="btnbottommore" width="180">
+						<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://addons.prestashop.com/en/8_OleaCorner?utm_source=NewsletterEN&utm_medium=OleaCorner&utm_campaign=Addons2013" target="_blank" style="display:block;">
+							<img class="btnbottommore_big" align="right" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/available_nl_en.png" alt="View it on Addons" height="37" width="177" border="0" style="display:block;overflow:hidden"/>
+						</a>
+					</td>
+					<td class="w10" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="wborderblockcontent" width="660" colspan="3">
+			<img class="wborderblockcontent" align="right" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_bottom_content.png" alt="border" height="6" width="620" border="0" style="display:block;overflow:hidden"/>
+		</td>
+	</tr>
+</table>
+
+<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/>
 
 <!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $article-title Enjoy 15% OFF all modules developed by OleaCorner! -->
-<!-- $article-title-size 24px -->
-<!-- $article-description Now through Saturday at midnight we're offering 15% off all OleaCorner developed modules. OleaCorner has created modules that will make selling easier and more effective for every online merchant!<br/><br/>From incentivizing your customers with gifts to creating prepaid accounts for your shoppers, OleaCorner has over a dozen unique modules to enhance your daily management and increase your sales.<br/><br/><strong>Take advantage of this limited time offer!<br/>Promo Code: FlashOlea</strong> -->
-<!-- $article-link http://addons.prestashop.com/en/8_OleaCorner?utm_source=NewsletterEN&utm_medium=OleaCorner&utm_campaign=Addons2013 -->
-<!-- $article-button available_nl -->
-<!-- $article-button-alt View it on Addons -->
-<!-- $article-button-width 177 -->
-<!-- $article-image addons-flash-oleacorner.jpg -->
-<!-- $article-image-alt 15% OFF OleaCorner -->
-<!-- END EDIT ////////////////////////////////////////////////// -->
-<!-- @include _article -->
-<!-- @include _article-separator -->
 
-<!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $article-title 5 Profitable Tips to Drastically Improve SEO for your Online Store -->
-<!-- $article-title-size 20px -->
-<!-- $article-description In order to be profitable online, customers must be able to discover your store.<br/>This is why practicing various strategies for SEO, Search Engine Optimization, are crucial for your store&rsquo;s success.<br/><br/>Read our blog post on tips to drastically improve SEO for your online store. -->
-<!-- $article-link http://www.prestashop.com/blog/en/5-profitable-tips-to-drastically-improve-seo-for-your-online-store/#more-13991 -->
-<!-- $article-button next_button -->
-<!-- $article-button-alt Read More -->
-<!-- $article-button-width 119 -->
-<!-- $article-image seo.jpg -->
-<!-- $article-image-alt Search engine optimization -->
+
+
+
+
+
+
+
+
 <!-- END EDIT ////////////////////////////////////////////////// -->
-<!-- @include _article -->
+<table class="w660content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+	<tr>
+		<td class="w660content" width="620" >
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660content" width="620" align="left">
+			<font size="3" face="Arial" color="#4d535e">
+				<span class="titlearticle" style="font-size:20px;">5 Profitable Tips to Drastically Improve SEO for your Online Store</span>
+			</font>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660content" width="620">
+			<table class="w660content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+				<tr>
+					<td class="w180contentimg" width="220" align="center">
+						<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/blog/en/5-profitable-tips-to-drastically-improve-seo-for-your-online-store/#more-13991" target="_blank">
+							<img class="w180contentimg" align="left" src="http://newsletter.prestashop.com/newsletters/179/img/seo.jpg" alt="Search engine optimization" width="220" border="0" style="display:block;overflow:hidden"/>
+						</a>
+					</td>
+					<td class="w20" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="w180contenttext" width="390" align="right">
+						<font size="2" face="Arial" color="#565e68">
+							<span style="font-size:13px;text-align:justify;display:block;">In order to be profitable online, customers must be able to discover your store.<br/>This is why practicing various strategies for SEO, Search Engine Optimization, are crucial for your store&rsquo;s success.<br/><br/>Read our blog post on tips to drastically improve SEO for your online store.</span>
+						</font>
+					</td>
+					<td class="w20" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w180content" width="620">
+			<table class="w180content" width="620" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+				<tr>
+					<td class="wbtnmore" width="440">
+						<img class="wbtnmore" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="400" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="wbtnmore" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="btnbottommore" width="180">
+						<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/blog/en/5-profitable-tips-to-drastically-improve-seo-for-your-online-store/#more-13991" target="_blank" style="display:block;">
+							<img class="btnbottommore_big" align="right" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/next_button_en.png" alt="Read More" height="37" width="119" border="0" style="display:block;overflow:hidden"/>
+						</a>
+					</td>
+					<td class="w10" width="10">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="10" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w460" width="620">
+			<img class="w400" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="620" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
 
 <!-- Focus -->
 
 <!-- EDIT ////////////////////////////////////////////////////// -->
-<!-- $focus-1-title Hot News -->
-<!-- $focus-1-description PrestaShop is headed to the west coast! RSVP for our free e-commerce events. -->
-<!-- $focus-1-link http://www.prestashop.com/en/events -->
-<!-- $focus-1-image prestashop-events.jpg -->
-<!-- $focus-1-image-alt PrestaShop events -->
-<!-- $focus-1-button eshop_button_advice_dicover -->
-<!-- $focus-1-button-alt Read More -->
 
-<!-- $focus-2-title Advice -->
-<!-- $focus-2-description Discover how to find the right products to sell online. -->
-<!-- $focus-2-link http://www.prestashop.com/blog/en/how-to-find-the-right-products-to-sell-online/ -->
-<!-- $focus-2-image target.jpg -->
-<!-- $focus-2-image-alt Find the right products -->
-<!-- $focus-2-button suscribe_button_read_more -->
-<!-- $focus-2-button-alt Read More -->
 
-<!-- $focus-3-title This week -->
-<!-- $focus-3-description Join our team of e-commerce enthusiasts who love what they do! -->
-<!-- $focus-3-link http://www.prestashop.com/en/careers -->
-<!-- $focus-3-image  careers.jpg -->
-<!-- $focus-3-image-alt Work at PrestaShop -->
-<!-- $focus-3-button participe_button_discover -->
-<!-- $focus-3-button-alt Read More -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- END EDIT ////////////////////////////////////////////////// -->
 
-<!-- @include _content-footer -->
-<!-- @include _footer -->
+						</table>
+					</td>
+					<td class="wleftrightcontent" width="20"style="border-right:1px solid #e7e7e8" bgcolor="#ffffff">
+						&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td class="w20" width="660" colspan="3">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/bottom_content.png" alt="edito" height="6" width="660" class="w660imgempty" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+			<img  class="w660imgempty" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="12" width="660" border="0" style="display:block;overflow:hidden"/>
+			<!-- FOCUS -->
+			<!-- ESHOP / NEWS / INFO -->
+<table class="wtablecontent" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+	<tr>
+		<td class="w20" width="660">
+			<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>
+	<tr>
+		<td class="w660vig" width="660">
+			<table class="w660vig"  width="660" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="w20" width="660" colspan="5">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_top_shop.png" alt="PS" height="7" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+				<tr>
+					<td class="w660vigcontent" width="208" style="border-left:1px solid #e7e7e8;border-right:1px solid #e7e7e8" bgcolor="#ffffff">
+						<table class="w660vigcontent" width="208" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+							<tr>
+								<td class="w25" width="20" bgcolor="#ffffff">
+									&nbsp;
+								</td>
+								<td class="w660global_vig_first" width="168" bgcolor="#ffffff">
+									<table class="w660global_vig" width="168" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+										<tr>
+											<td class="w660global_vig" width="168">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+										</tr>
+										<tr>
+											<td class="w660global_vig" width="168">
+												<table class="w660global_vig" width="168" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+													<tr>
+														<td class="w25" style="border-left:2px solid #d7006d" width="10">
+															&nbsp;
+														</td>
+														<td class="w660global_vig" width="148" align="left">
+															<font size="3" face="Arial" color="#d7006d">
+																<span class="spanvignettetitle" style="font-size:23px;display:block;width: 150px;">
+																	Hot News
+																</span>
+															</font>
+														</td>
+													</tr>
+													<tr>
+														<td class="w460" width="168" colspan="2">
+															<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/>
+														</td>
+													</tr>
+													<tr>
+														<td width="168" colspan="2" align="left">
+															<font size="3" face="Arial" color="#d7006d">
+																<a class="spanvignettelink" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/en/events" target="_blank">
+																	<img class="imgvignett" src="http://newsletter.prestashop.com/newsletters/179/img/prestashop-events.jpg" alt="PrestaShop events" width="170" border="0" style="display:block;overflow:hidden"/> 
+																</a>
+																<img class="w20" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/>
+																<span class="spanvignettecontent" style="font-size:13px;color:#565e68">
+																	PrestaShop is headed to the west coast! RSVP for our free e-commerce events.
+																</span>
+																<img class="w20" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="35" width="168" border="0" style="display:block;overflow:hidden"/>
+																<a class="spanvignettebtn" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/en/events" target="_blank">
+																	<img class="btn_vignette" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/eshop_button_advice_dicover_en.png" alt="Read More" height="37" width="171" border="0" style="display:block;overflow:hidden"/> 
+																</a>
+															</font>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td class="w660global_vig" width="168">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td class="w25" width="20" bgcolor="#ffffff">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="w20" width="15">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" width="15" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="w660vigcontent" width="208" style="border-left:1px solid #e7e7e8;border-right:1px solid #e7e7e8" bgcolor="#ffffff">
+						<table class="w660vigcontent" width="208" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+							<tr>
+								<td class="w25" width="20" bgcolor="#ffffff">
+									&nbsp;
+								</td>
+								<td class="w660global_vig_first" width="168" bgcolor="#ffffff">
+									<table class="w660global_vig" width="168" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+										<tr>
+											<td class="w660global_vig" width="168">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+										</tr>
+										<tr>
+											<td class="w660global_vig" width="168">
+												<table class="w660global_vig" width="168" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+													<tr>
+														<td class="w25" style="border-left:2px solid #7ac143" width="10">
+															&nbsp;
+														</td>
+														<td class="w660global_vig" width="148" align="left">
+															<font size="3" face="Arial" color="#7ac143">
+																<span class="spanvignettetitle" style="font-size:23px;display:block;width: 150px;">
+																	Advice
+																</span>
+															</font>
+														</td>
+													</tr>
+													<tr>
+														<td class="w460" width="168" colspan="2">
+															<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/>
+														</td>
+													</tr>
+													<tr>
+														<td width="168" colspan="2" align="left">
+															<font size="3" face="Arial" color="#7ac143">
+																<a class="spanvignettelink" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/blog/en/how-to-find-the-right-products-to-sell-online/" target="_blank">
+																	<img class="imgvignett" src="http://newsletter.prestashop.com/newsletters/179/img/target.jpg" alt="Find the right products" width="170" border="0" style="display:block;overflow:hidden"/>  
+																</a>
+																<img class="w20" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/>
+																<span class="spanvignettecontent" style="font-size:13px;color:#565e68">
+																	Discover how to find the right products to sell online.
+																</span>
+																<img class="w20" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="35" width="168" border="0" style="display:block;overflow:hidden"/>
+																<a class="spanvignettebtn" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/blog/en/how-to-find-the-right-products-to-sell-online/" target="_blank">
+																	<img class="btn_vignette" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/suscribe_button_read_more_en.png" alt="Read More" height="37" width="171" border="0" style="display:block;overflow:hidden"/> 
+																</a>
+															</font>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td class="w660global_vig" width="168">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td class="w25" width="20" bgcolor="#ffffff">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td class="w20" width="15">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" width="15" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+					<td class="w660vigcontent" width="208" style="border-left:1px solid #e7e7e8;border-right:1px solid #e7e7e8" bgcolor="#ffffff">
+						<table class="w660vigcontent" width="208" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+							<tr>
+								<td class="w25" width="20" bgcolor="#ffffff">
+									&nbsp;
+								</td>
+								<td class="w660global_vig_last" width="168" bgcolor="#ffffff">
+									<table class="w660global_vig" width="168" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+										<tr>
+											<td class="w660global_vig" width="168">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+										</tr>
+										<tr>
+											<td class="w660global_vig" width="168">
+												<table class="w660global_vig" width="168" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+													<tr>
+														<td class="w25" style="border-left:2px solid #006f96" width="10">
+															&nbsp;
+														</td>
+														<td class="w660global_vig" width="148" align="left">
+															<font size="3" face="Arial" color="#006f96">
+																<span class="spanvignettetitle" style="font-size:23px;display:block;width: 150px;">
+																	This week
+																</span>
+															</font>
+														</td>
+													</tr>
+													<tr>
+														<td width="168" colspan="2">
+															<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="35" width="168" border="0" style="display:block;overflow:hidden"/>
+														</td>
+													</tr>
+													<tr>
+														<td width="168" colspan="2" align="left">
+															<font size="3" face="Arial" color="#006f96">
+																<a class="spanvignettelink" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/en/careers" target="_blank">
+																	<img class="imgvignett" src="http://newsletter.prestashop.com/newsletters/179/img/careers.jpg" alt="Work at PrestaShop" width="170" border="0" style="display:block;overflow:hidden"/> 
+																</a>
+																<img class="w20" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/>
+																<span class="spanvignettecontent" style="font-size:13px;color:#565e68">
+																	Join our team of e-commerce enthusiasts who love what they do!
+																</span>
+																<img class="w20" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/>
+																<a class="spanvignettebtn" href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.prestashop.com/en/careers" target="_blank">
+																	<img class="btn_vignette" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/participe_button_discover_en.png" alt="Read More" height="37" width="171" border="0" style="display:block;overflow:hidden"/> 
+																</a>
+															</font>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										<tr>
+											<td class="w660global_vig" width="168">
+												<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="15" width="168" border="0" style="display:block;overflow:hidden"/> 
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td class="w25" width="20" bgcolor="#ffffff">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="w20" width="660" colspan="5">
+						<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/border_bottom_shop.png" alt="PS" height="7" class="w660imgempty" width="660" border="0" style="display:block;overflow:hidden"/> 
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="w20" width="660">
+			<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" width="660" class="w660imgempty" border="0" style="display:block;overflow:hidden"/> 
+		</td>
+	</tr>						
+</table>
+<img class="wsummary" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="12" width="660" border="0" style="display:block;overflow:hidden"/>
+		</td>
+	</tr>
+</table>
+<!-- FOOTER -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f2f2f3">
+			<tr>
+				<td bgcolor="#363a45" align="center">
+					<table class="w660" width="660" border="0" cellspacing="0" cellpadding="0" bgcolor="#363a45">
+						<tr>
+							<td class="w660" width="660" colspan="3">
+								<img class="w660imgempty" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="660" border="0" style="display:block;overflow:hidden"/> 
+							</td>
+						</tr>
+						<tr>
+							<td class="wfollowus" width="315">
+								<table class="wfollowus" width="315" border="0" cellspacing="0" cellpadding="0" bgcolor="#363a45">
+									<tr>
+										<td class="wfollowus" width="315" valign="top" align="left">
+											<font size="3" face="Arial" color="#ffffff">
+												<span style="font-size:23px">Follow us on</span>
+											</font>
+										</td>
+									</tr>
+									<tr>
+										<td class="wfollowus" width="315">
+											<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" class="w660imgempty" height="10" width="315" border="0" style="display:block;overflow:hidden"/> 
+										</td>
+									</tr>
+									<tr>
+										<td class="wfollowus" width="315" >
+											<table class="wfollowus" width="315" border="0" cellspacing="0" cellpadding="0" bgcolor="#363a45">
+												<tr>
+													<td class="wpictofooter" width="44">
+														<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=https://www.facebook.com/prestashop" target="_blank">
+															<img class="wpictofooter" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/fb_footer.png" alt="PS" height="41" width="41" border="0" style="display:block;overflow:hidden"/>
+														</a>
+													</td>
+													<td class="wspacepicto" width="10">
+														<img class="wspacepicto" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+													</td>
+													<td class="wpictofooter" width="44">
+														<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://twitter.com/prestashop" target="_blank">
+															<img class="wpictofooter" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/twitter_footer.png" alt="PS" height="41" width="41" border="0" style="display:block;overflow:hidden"/>
+														</a>
+													</td>
+													<td class="wspacepicto" width="10">
+														<img class="wspacepicto" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+													</td>
+													<td class="wpictofooter" width="44">
+														<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://vimeo.com/prestashop" target="_blank">
+															<img class="wpictofooter" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/vimeo_footer.png" alt="PS" height="41" width="41" border="0" style="display:block;overflow:hidden"/>
+														</a>
+													</td>
+													<td class="wspacepicto" width="10">
+														<img class="wspacepicto" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+													</td>
+													<td class="wpictofooter" width="44">
+														<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.youtube.com/user/prestashop" target="_blank">
+															<img class="wpictofooter" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/youtube_footer.png" alt="PS" height="41" width="41" border="0" style="display:block;overflow:hidden"/>
+														</a>
+													</td>
+													<td class="wspacepicto" width="10">
+														<img class="wspacepicto" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+													</td>
+													<td class="wpictofooter" width="44">
+														<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://www.reddit.com/r/prestashop" target="_blank">
+															<img class="wpictofooter" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/reddit_footer.png" alt="PS" height="41" width="41" border="0" style="display:block;overflow:hidden"/>
+														</a>
+													</td>
+													<td class="wspacepicto" width="10">
+														<img class="wspacepicto" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="10" border="0" style="display:block;overflow:hidden"/> 
+													</td>
+													<td class="wpictofooter" width="44">
+														<a href="http://newsletter.prestashop.com/newsletters/redirect.php?id=179&link=http://pinterest.com/prestashop/" target="_blank">
+															<img class="wpictofooter" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/pinterest_footer.png" alt="PS" height="41" width="41" border="0" style="display:block;overflow:hidden"/>
+														</a>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td class="w10" width="20">
+								<img src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="10" width="20" border="0" style="display:block;overflow:hidden"/> 
+							</td>
+							<td class="wclick" width="325" align="left">
+								<font size="3" face="Arial" color="#909c9f">
+									<span class="wclick" style="font-size:12px;line-height:15px;display:block">
+										If you do not want to receive any further messages from PrestaShop, we invite you to exercise your right to unsubscribe by <a style="color:#ffffff;text-decoration:none;" href="[[UNSUB_LINK_EN]]">clicking here</a>.
+									</span>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td class="w660" width="660" colspan="3">
+								<img class="w660imgempty" src="http://newsletter.prestashop.com/newsletters/newsletterV5/img/p.png" alt="PS" height="20" width="660" border="0" style="display:block;overflow:hidden"/> 
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

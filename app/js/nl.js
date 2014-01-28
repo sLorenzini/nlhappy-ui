@@ -1,5 +1,15 @@
 var nl = angular.module('nl', ['ngRoute']);
 
+nl.directive('includeReplace', function () {
+    return {
+        require: 'ngInclude',
+        restrict: 'A',
+        link: function (scope, el, attrs) {
+            el.replaceWith(el.children());
+        }
+    };
+});
+
 var apiRoot = 'http://nlhappy.fmdj.fr';
 
 function apiURL(path)
