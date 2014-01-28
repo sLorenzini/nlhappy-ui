@@ -75,6 +75,31 @@ nl.controller('ArticleController', function($scope, $http) {
 	$scope.ucfirst = function(string)
 	{
 	    return string.charAt(0).toUpperCase() + string.slice(1);
-	}
+	};
+
+	$scope.deleteArticle = function()
+	{
+		var article = $scope.article;
+
+		$http.post(apiURL('/articles/'+article.id+'/delete'))
+		.success(function(data) {
+			if (data.success)
+			{
+				var pos = null;
+				for(var i in $scope.articles)
+				{
+					if($scope.articles[i].id == article.id)
+					{
+						pos = i;
+						break;
+					}
+				}
+				if (pos !== null)
+				{
+					$scope.articles.splice(pos, 1);
+				}
+			}
+		});
+	};
 
 });

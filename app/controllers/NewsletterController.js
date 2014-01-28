@@ -71,26 +71,13 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 	{
 		if ($scope.articles)
 		{
-			$http.post($scope.articles_url).success(function (data){
+			$http.post($scope.articles_url, {type: $scope.shared.default_article_type}).success(function (data){
 				data.data.position = data.data.position+"";
 				$scope.articles.push(data.data);
 				/*$location.hash('article_'+data.data.id);
 				$anchorScroll();*/
 			});
 		}
-	};
-
-	$scope.deleteArticle = function(position_in_array)
-	{
-		var article = $scope.articles[position_in_array];
-
-		$http.post(apiURL('/articles/'+article.id+'/delete'))
-		.success(function(data) {
-			if (data.success)
-			{
-				$scope.articles.splice(position_in_array, 1);
-			}
-		});
 	};
 
 	$scope.deleteNewsletter = function()

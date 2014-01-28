@@ -1,18 +1,18 @@
-<div id="article_{{article.id}}" class="article container">
-	<div class="row">
-		<div class="col-lg-6"><h4 ng-click='visible=!visible'>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
+<div id="article_{{article.id}}" class="article container {{article.id === shared.focused_article_id ? 'focused' : ''}}">
+	<div class="row" ng-click='toggleFocusedArticle(article.id)'>
+		<div class="col-lg-6"><h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
 		<div class="col-lg-6 article-title">{{article.title || 'Untitled Article'}}</div>
 	</div>
 	
 	<img ng-click="moveUp()" src="/img/up.png" title="Move article UP.">
 	<img ng-click="moveDown()" src="/img/down.png" title="Move article DOWN.">
 	
-	<div class="article-body" ng-show="visible">
+	<div class="article-body" ng-show="article.id == shared.focused_article_id">
 		<div class="form-horizontal">
 			<div class="form-group">
 				<label for="article_type_{{article.id}}" class="control-label col-lg-3">Article Type</label>
 				<div class="col-lg-9">
-					<select class="form-control" id="article_type_{{article.id}}" ng-model="article.type" ng-options="v as v for v in article_types"></select>
+					<select class="form-control" id="article_type_{{article.id}}" ng-model="article.type" ng-options="v as v for v in article_types" ng-change='shared.default_article_type=article.type'></select>
 				</div>
 			</div>
 			<div class="form-group">
@@ -79,7 +79,7 @@
 		<div class="bottom">
 			<div class="row">
 				<div class="pull-right">
-					<button ng-click="deleteArticle(position_in_array)" type="button" class="btn btn-danger">Delete Article</button>
+					<button ng-click="deleteArticle()" type="button" class="btn btn-danger">Delete Article</button>
 				</div>
 			</div>
 		</div>
