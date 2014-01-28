@@ -30,6 +30,7 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 		if(language_code)
 		{
 			$scope.language_url = apiURL('/newsletters/'+$routeParams.newsletter_id+'/'+language_code);
+			$scope.preview_url = $scope.language_url+'/render'
 
 			$http.post($scope.language_url)
 			.success(function(data) {

@@ -10,8 +10,6 @@ nl.directive('includeReplace', function () {
     };
 });
 
-var apiRoot = 'http://nlhappy.fmdj.fr';
-
 function apiURL(path)
 {
 	return apiRoot+path;
