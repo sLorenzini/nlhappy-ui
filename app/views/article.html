@@ -15,6 +15,7 @@
 				<div class="col-lg-9">
 					<select class="form-control" id="article_type_{{article.id}}" ng-model="article.type" ng-options="v as v for v in article_types" ng-change='shared.default_article_type=article.type'></select>
 				</div>
+				<p class="help-block col-lg-9 pull-right">Type: default article or footer article</p>
 			</div>
 			<div class="form-group">
 				<label for="article_title_{{article.id}}" class="control-label col-lg-3">Article Title</label>
@@ -51,7 +52,12 @@
 				<div class="col-lg-9">
 					<input id="article_image_anchor_{{article.id}}" class="form-control" ng-model="article.image_anchor">
 				</div>
-				<p class="help-block col-lg-9 pull-right">Max-width of an image: 285px. Very important. To send to Sarah to put it on the server</p>
+				<p class="help-block col-lg-9 pull-right">
+					Name of the image (e.g: training.png,...). <br/> 
+					Max-width of an article image: 285px. <br/>
+					Size of an footer article image: 275px*205px. <br/>
+					Very important. To send to Sarah to put it on the server
+				</p>
 			</div>
 			<div class="form-group">
 				<label for="article_image_alt_{{article.id}}" class="control-label col-lg-3">Image Alt</label>
@@ -61,7 +67,7 @@
 				<p class="help-block col-lg-9 pull-right">Name for the image</p>
 			</div>
 		</div>
-		<h4>Article Buttons (better one than two ;) )</h4>
+		<h4>Article Buttons</h4>
 		<div class="form-horizontal">
 			<div class="form-group">
 				<div class="col-lg-9 col-lg-offset-3">
