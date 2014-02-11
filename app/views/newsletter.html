@@ -2,26 +2,34 @@
 
 <div class="form-horizontal">
 	<div class="form-group">
-		<label for="number" class="control-label col-lg-3">Newsletter Number</label>
+		<label for="number" class="control-label col-lg-3">
+			<span data-toggle="tooltip" class="label-tooltip" data-original-title="Caractères interdits &lt;&gt;;=#{}">
+				Newsletter Number
+			</span>
+		</label>
 		<div class="col-lg-9">
 			<input class="form-control" id="number" type="number" ng-model="newsletter.number">
 		</div>
+		<p class="help-block col-lg-9 pull-right">ID of the newsletter (e.g: 145, 172...)</p>
 	</div>
 	<div class="form-group">
 		<label for="date" class="control-label col-lg-3">To be sent on</label>
 		<div class="col-lg-9">
 			<input class="form-control" id="date" type="date" ng-model="newsletter.date">
 		</div>
+		<p class="help-block col-lg-9 pull-right">Date to send it (e.g: 2014-01-30)</p>
 	</div>
 </div>
 
+<h4>Choose a language</h4>
 <table class="table">
 	<tr>
-		<td ng-repeat="(code, language) in languages" class="{{language.klass}}">
-			<a href="#/newsletters/{{newsletter.id}}/{{code}}">{{language.name}}</a>
+		<td ng-repeat="language in languages" class="language_flag {{language.code}} {{language.klass}}">
+			<a href="#/newsletters/{{newsletter.id}}/{{language.code}}">{{language.name}}</a>
 		</td>
 	</tr>
 </table>
+<hr/>
 
 <div ng-if="!newsletter_language">
 	Please select a language to view / edit.
@@ -29,7 +37,16 @@
 
 <div ng-if="newsletter_language">
 
-	<a target="_blank" href="{{preview_url}}" class="btn btn-success">Preview Me!</a>
+	<div class="row">
+		<div class="col-lg-2">
+			<a target="_blank" href="{{preview_url}}" class="btn btn-success">Preview Me!</a>
+		</div>
+		<div class="col-lg-2">
+			<button ng-click='deleteNewsletter()' class="btn btn-danger">Kill This Newsletter</button>
+		</div>
+	</div>
+
+	<hr/>
 
 	<h3>Newsletter Title and Edito</h3>
 
@@ -45,6 +62,7 @@
 			<div class="col-lg-9">
 				<input id="title_size" class="form-control" type="number" ng-model="newsletter_language.title_size">
 			</div>
+			<p class="help-block col-lg-9 pull-right">Min size: 24px</p>
 		</div>
 		<div class="form-group">
 			<label for="edito" class="control-label col-lg-3">Edito</label>
@@ -59,8 +77,16 @@
 	<div ng-repeat="(position_in_array, article) in articles | orderBy:articleOrderProp" ng-controller="ArticleController" ng-include="'/views/article.html'">
 	</div>
 
-	<button ng-click="addArticle()" type="button" class="btn btn-default">Add Article</button>
+	<button ng-click="addArticle()" type="button" class="btn btn-default">Add New Article</button>
 </div>
-<div class="bottom">
-	<button ng-click='deleteNewsletter()' class="btn btn-danger">Kill This Newsletter</button>
+
+<hr/>
+
+<div class="row bottom">
+	<div class="col-lg-2">
+		<a target="_blank" href="{{preview_url}}" class="btn btn-success">Preview Me!</a>
+	</div>
+	<div class="col-lg-2">
+		<button ng-click='deleteNewsletter()' class="btn btn-danger">Kill This Newsletter</button>
+	</div>
 </div>

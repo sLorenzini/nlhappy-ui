@@ -1,6 +1,10 @@
+<!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>PrestaShop interface - NL Happy</title>
+		<link href="http://www.prestashop.com/images/favicon.ico" rel="shortcut icon">
 		<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="/css/main.css">
@@ -10,23 +14,26 @@
 	<body ng-app="nl" ng-controller="MainController">
 
 		<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-		  <div class="container">
-		    <div class="navbar-header">
-		      <a href="/" class="navbar-brand">NL Happy</a>
-		    </div>
-		    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-		      <ul class="nav navbar-nav">
-		        <li>
-		          <a href="/#/newsletters">Newsletters</a>
-		        </li>
-		      </ul>
-		      <ul class="nav navbar-nav navbar-right">
-		        <li>
-		          <p class="navbar-text {{status.klass}}">{{status.message}}</p>
-		        </li>
-		      </ul>
-		    </nav>
-		  </div>
+			<div class="container">
+				<div class="navbar-header">
+					<a href="/" class="navbar-brand">
+						<img src="//img-cdn.prestashop.com/logo.png" alt="PrestaShop" width="180" />
+						NL Happy
+					</a>
+				</div>
+				<nav class="collapse navbar-collapse bs-navbar-collapse navbar-header" role="navigation">
+					<ul class="nav navbar-nav navbar-brand">
+						<li>
+							<a href="/#/newsletters">List of newsletters</a>
+						</li>
+				  	</ul>
+					<ul class="nav navbar-nav navbar-brand">
+						<li>
+							<p class="navbar-text {{status.klass}}">{{status.message}}</p>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 
 		<div id="main" class="container">

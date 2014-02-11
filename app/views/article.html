@@ -1,11 +1,12 @@
 <div id="article_{{article.id}}" class="article container {{article.id === shared.focused_article_id ? 'focused' : ''}}">
 	<div class="row" ng-click='toggleFocusedArticle(article.id)'>
-		<div class="col-lg-6"><h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
-		<div class="col-lg-6 article-title">{{article.title || 'Untitled Article'}}</div>
+		<div class="col-lg-4"><h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
+		<div class="col-lg-4 article-title text-center">{{article.title || 'Untitled Article'}}</div>
+		<div class="col-lg-4 text-right">
+			<img ng-click="moveUp()" src="/img/up.png" title="Move article UP." class="move_article">
+			<img ng-click="moveDown()" src="/img/down.png" title="Move article DOWN." class="move_article">
+		</div>
 	</div>
-	
-	<img ng-click="moveUp()" src="/img/up.png" title="Move article UP.">
-	<img ng-click="moveDown()" src="/img/down.png" title="Move article DOWN.">
 	
 	<div class="article-body" ng-show="article.id == shared.focused_article_id">
 		<div class="form-horizontal">
@@ -26,6 +27,7 @@
 				<div class="col-lg-9">
 					<input id="article_title_size_{{article.id}}" class="form-control" type="number" ng-model="article.title_size">
 				</div>
+				<p class="help-block col-lg-9 pull-right">Min size: 23px</p>
 			</div>
 			<div class="form-group">
 				<label for="article_body_{{article.id}}" class="control-label col-lg-3">Article Body</label>
@@ -33,26 +35,33 @@
 					<textarea class="form-control article-body" id="article_body_{{article.id}}" ng-model="article.body"></textarea>
 				</div>
 			</div>
+		</div>
+
+		<h4>Article Image</h4>
+		<div class="form-horizontal">
 			<div class="form-group">
 				<label for="article_image_url_{{article.id}}" class="control-label col-lg-3">Image URL</label>
 				<div class="col-lg-9">
 					<input id="article_image_url_{{article.id}}" class="form-control" ng-model="article.image_url">
 				</div>
+				<p class="help-block col-lg-9 pull-right">Link on the image</p>
 			</div>
 			<div class="form-group">
-				<label for="article_image_anchor_{{article.id}}" class="control-label col-lg-3">Image Anchor</label>
+				<label for="article_image_anchor_{{article.id}}" class="control-label col-lg-3">Image Link</label>
 				<div class="col-lg-9">
 					<input id="article_image_anchor_{{article.id}}" class="form-control" ng-model="article.image_anchor">
 				</div>
+				<p class="help-block col-lg-9 pull-right">Max-width of an image: 285px. Very important. To send to Sarah to put it on the server</p>
 			</div>
 			<div class="form-group">
 				<label for="article_image_alt_{{article.id}}" class="control-label col-lg-3">Image Alt</label>
 				<div class="col-lg-9">
 					<input class="form-control article-body" id="article_image_alt_{{article.id}}" ng-model="article.image_alt">
 				</div>
+				<p class="help-block col-lg-9 pull-right">Name for the image</p>
 			</div>
 		</div>
-		<h4>Article Buttons</h4>
+		<h4>Article Buttons (better one than two ;) )</h4>
 		<div class="form-horizontal">
 			<div class="form-group">
 				<div class="col-lg-9 col-lg-offset-3">
@@ -65,13 +74,31 @@
 							<th>URL</th>
 							<th></th>
 						</tr>
-						<tr ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'"></tr>
+						<tr ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'" class="line_buttons"></tr>
+						<tr>
+							<td>
+								<p class="help-block">Move up</p>
+							</td>
+							<td>
+								<p class="help-block">Move down</p>
+							</td>
+							<td>
+								<p class="help-block">Text for the button</p>
+							</td>
+							<td>
+								<p class="help-block">Color background (e.g: #83B817,...). Default: #83B817.</p>
+							</td>
+							<td>
+								<p class="help-block">Link for the button</p>
+							</td>
+							<td></td>
+						</tr>
 					</table>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-lg-9 col-lg-offset-3">
-					<button ng-click="addButton()" type="button" class="btn btn-default no-margin">Add Button</button>
+					<button ng-click="addButton()" type="button" class="btn btn-default no-margin">Add New Button</button>
 				</div>
 			</div>
 		</div>

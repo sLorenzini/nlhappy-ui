@@ -18,14 +18,20 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 
 	$http.get(apiURL('/languages')).success(function(data) {
 		var language_code = $routeParams.language_code;
-		$scope.languages = {};
+		$scope.languages = [];
 		for(var l in data.data)
 		{
-			$scope.languages[data.data[l].code] = {
+			$scope.languages.push({
+				code: data.data[l].code,
 				name: data.data[l].name,
+				position: data.data[l].position,
 				klass: language_code === data.data[l].code ? 'selected' : ''
-			};
+			});
 		}
+
+		$scope.languages.sort(function(a, b) {
+			return a.position - b.position;
+		});
 
 		if(language_code)
 		{

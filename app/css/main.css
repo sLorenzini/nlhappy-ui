@@ -1,33 +1,69 @@
-td.selected
-{
-	background-color: #CCC;
+/***** header *****/
+.navbar-inverse{
+	background-image: linear-gradient(to bottom, #363a45 0px, #262830 100%);
+    position: relative;
 }
+
+.navbar-nav > li > a{padding-top: 13px;}
+
+/****** main *****/
+div#main{}
+
+table.table{margin-top: 10px;}
+
+table.table tbody td{vertical-align: middle; padding: 25px 8px 0 8px;}
+
+td.language_flag.selected a{border: 2px solid red;}
+
+td.language_flag a{
+	width: 36px;
+	height: 32px;
+	text-indent: -9999px;
+	display: block;
+	outline: none;
+	margin: auto;
+	background-position: 0 -2px;
+	background-repeat: no-repeat;
+}
+
+td.language_flag.en a{background-image: url("../img/usa.png")}
+td.language_flag.fr a{background-image: url("../img/france.png")}
+td.language_flag.es a{background-image: url("../img/spain.png")}
+td.language_flag.de a{background-image: url("../img/german.png")}
+td.language_flag.it a{background-image: url("../img/italy.png")}
+td.language_flag.br a{background-image: url("../img/portuguese.png")}
+td.language_flag.pl a{background-image: url("../img/poland.png")}
+td.language_flag.ru a{background-image: url("../img/russia.png")}
+
 
 div.article
 {
 	border: 1px solid #CCC;
 	margin-bottom: 15px;
+	padding: 10px
 }
 
-.no-margin
-{
-	margin: 0;
+div.article-body{margin-top: 10px;}
+div.article-body h4{padding-left: 10px;}
+div.article-body .table td{
+	border: none;
+	vertical-align: top;
+	padding: 0 8px 0 8px;
 }
 
-textarea.article-body
-{
-	min-height: 400px
+div.article-body .table .line_buttons td{
+	padding-bottom: 15px;
 }
 
-textarea#edito
-{
-	min-height: 180px;
+img.move_article{width: 32px}
+
+.no-margin{margin: 0;}
+
+textarea.article-body{
+	min-height: 400px;
 }
 
-div#main
-{
-	margin-top: 75px;
-}
+textarea#edito{min-height: 180px;}
 
 [ng-click]
 {
@@ -40,28 +76,13 @@ img.medium
 	height: 32px;
 }
 
-div.bottom
-{
-	margin-top: 50px;
-}
+div.bottom{margin-top: 20px;}
 
-div.article
-{
-	padding-bottom: 10px;
-}
+div.article.focused, div.article:hover{background-color: #FFFFEE;}
 
-div.article.focused
-{
-	background-color: #FFFFEE;
-}
+div.pull-right>button{margin: 15px;}
 
-div.pull-right>button
-{
-	margin: 15px;
-}
-
-div.article-title
-{
+div.article-title{
 	color: #777;
 	font-weight: bold;
 	line-height: 34px;
