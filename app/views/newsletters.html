@@ -1,3 +1,12 @@
-<div ng-repeat='newsletter in newsletters'>
-	<a href="#/newsletters/{{newsletter.id}}">Newsletter #{{newsletter.number}}</a>
+<div ng-repeat='newsletter in newsletters' class='row spaced'>
+	<div class="col-lg-6 other-col-has-btn">
+		<a href="#/newsletters/{{newsletter.id}}">Newsletter #{{newsletter.number}}</a>
+	</div>
+	<div class="col-lg-6">
+		<button class="btn btn-danger" ng-click="deleteNewsletterById(newsletter.id); reload();">Delete</button>
+	</div>
+</div>
+
+<div class="bottom">
+	<button class="btn btn-default" ng-click='createNewsletter()'>Add New Newsletter</button>
 </div>

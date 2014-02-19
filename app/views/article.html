@@ -3,13 +3,13 @@
 		<div class="col-lg-4"><h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
 		<div class="col-lg-4 article-title text-center">{{article.title || 'Untitled Article'}}</div>
 		<div class="col-lg-4 text-right">
-			<img ng-click="moveUp()" src="/img/up.png" title="Move article UP." class="move_article">
-			<img ng-click="moveDown()" src="/img/down.png" title="Move article DOWN." class="move_article">
+			<img ng-click="moveUp($event)" src="/img/up.png" title="Move article UP." class="move_article">
+			<img ng-click="moveDown($event)" src="/img/down.png" title="Move article DOWN." class="move_article">
 		</div>
 	</div>
 	
 	<div class="article-body" ng-show="article.id == shared.focused_article_id">
-		<div class="form-horizontal">
+		<form class="form-horizontal">
 			<div class="form-group">
 				<label for="article_type_{{article.id}}" class="control-label col-lg-3">Article Type</label>
 				<div class="col-lg-9">
@@ -20,15 +20,15 @@
 			<div class="form-group">
 				<label for="article_title_{{article.id}}" class="control-label col-lg-3">Article Title</label>
 				<div class="col-lg-9">
-					<input class="form-control" id="article_title_{{article.id}}" ng-model="article.title">
+					<input required class="form-control" id="article_title_{{article.id}}" ng-model="article.title">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="article_title_size_{{article.id}}" class="control-label col-lg-3">Article Title Size (in pixels)</label>
 				<div class="col-lg-9">
-					<input id="article_title_size_{{article.id}}" class="form-control" type="number" ng-model="article.title_size">
+					<input required min="24" id="article_title_size_{{article.id}}" class="form-control" type="number" ng-model="article.title_size">
 				</div>
-				<p class="help-block col-lg-9 pull-right">Min size: 23px</p>
+				<p class="help-block col-lg-9 pull-right">Min size: 24px</p>
 			</div>
 			<div class="form-group">
 				<label for="article_body_{{article.id}}" class="control-label col-lg-3">Article Body</label>
@@ -36,7 +36,7 @@
 					<textarea class="form-control article-body" id="article_body_{{article.id}}" ng-model="article.body"></textarea>
 				</div>
 			</div>
-		</div>
+		</form>
 
 		<h4>Article Image</h4>
 		<div class="form-horizontal">
@@ -71,35 +71,7 @@
 		<div class="form-horizontal">
 			<div class="form-group">
 				<div class="col-lg-9 col-lg-offset-3">
-					<table class="table">
-						<tr>
-							<th></th>
-							<th></th>
-							<th>Title</th>
-							<th>Style</th>
-							<th>URL</th>
-							<th></th>
-						</tr>
-						<tr ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'" class="line_buttons"></tr>
-						<tr>
-							<td>
-								<p class="help-block">Move up</p>
-							</td>
-							<td>
-								<p class="help-block">Move down</p>
-							</td>
-							<td>
-								<p class="help-block">Text for the button</p>
-							</td>
-							<td>
-								<p class="help-block">Color background (e.g: #83B817,...). Default: #83B817.</p>
-							</td>
-							<td>
-								<p class="help-block">Link for the button</p>
-							</td>
-							<td></td>
-						</tr>
-					</table>
+					<div ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'" class="line_buttons"></div>
 				</div>
 			</div>
 			<div class="form-group">

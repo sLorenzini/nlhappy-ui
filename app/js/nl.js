@@ -32,6 +32,10 @@ nl.config(['$routeProvider', function($routeProvider) {
 	.when('/newsletters/:newsletter_id/:language_code', {
 		templateUrl: '/views/newsletter.html',
 		controller: 'NewsletterController'
+	})
+	.when('/messages', {
+		templateUrl: '/views/messages.html',
+		controller: 'MessagesController'
 	});
 }]);
 

@@ -1,5 +1,7 @@
 nl.controller('ButtonController', function ($scope, $http) {
 
+	$scope.show_more = false;
+
 	var first = true;
 	$scope.$watch('button', function() {
 		if(first)
@@ -11,6 +13,16 @@ nl.controller('ButtonController', function ($scope, $http) {
 			$scope.updateButton();
 		}
 	}, true);
+
+	if (!$scope.button.style)
+	{
+		$scope.button.style = '#83B817';
+	}
+
+	$scope.button.width = parseInt($scope.button.width);
+	$scope.button.height = parseInt($scope.button.height);
+	$scope.button.line_height = parseInt($scope.button.line_height);
+	$scope.button.addons = $scope.button.addons == 1 ? true : false;
 
 	$scope.deleteButton = function (pos_in_array, button) {
 		$http.post(apiURL('/buttons/'+button.id+'/delete'))
@@ -61,5 +73,15 @@ nl.controller('ButtonController', function ($scope, $http) {
 	{
 		console.log("hi");
 		return parseInt($scope.button.position);
+	}
+
+	$scope.showMore = function()
+	{
+		$scope.show_more = true;
+	}
+
+	$scope.showLess = function()
+	{
+		$scope.show_more = false;
 	}
 });

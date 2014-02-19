@@ -1,4 +1,4 @@
-nl.controller('MainController', function ($scope) {
+nl.controller('MainController', function ($scope, $http, $location, $route) {
 	$scope.status = {
 		message: '',
 		klass: ''
@@ -20,4 +20,20 @@ nl.controller('MainController', function ($scope) {
 			$scope.shared.focused_article_id = id;
 		}
 	};
+
+	$scope.deleteNewsletterById = function(id)
+	{
+		$http.post(apiURL('/newsletters/'+id+'/delete'))
+		.success(function (data) {
+			if(data.success)
+			{
+				$location.path('/newsletters');
+			}
+		});
+	};
+
+	$scope.reload = function()
+	{
+		$route.reload();
+	}
 });

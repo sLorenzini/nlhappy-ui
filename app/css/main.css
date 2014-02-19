@@ -87,3 +87,31 @@ div.article-title{
 	font-weight: bold;
 	line-height: 34px;
 }
+
+div.other-col-has-btn
+{
+	padding-top: 7px; 
+}
+
+div.row.spaced
+{
+	margin-bottom: 10px;
+}
+
+input.ng-valid
+{
+	background-color: #F3FFF3;
+}
+
+input.ng-invalid
+{
+	background-color: #FEE;	
+}
+
+form.button-form
+{
+	border: 1px solid #CCC;
+	margin-bottom: 10px;
+	padding: 15px;
+	border-radius: 5px
+}
