@@ -1,14 +1,20 @@
 var nl = angular.module('nl', ['ngRoute']);
 
-nl.directive('includeReplace', function () {
-    return {
-        require: 'ngInclude',
-        restrict: 'A',
-        link: function (scope, el, attrs) {
-            el.replaceWith(el.children());
-        }
-    };
-});
+nl.directive('ngSafeClick', [
+        function(){
+            return {
+            	restrict: 'A',
+                link: function (scope, element, attr) {
+                    var msg = attr.dataConfirm || "Are you sure?";
+                    var clickAction = attr.ngSafeClick;
+                    element.bind('click',function (event) {
+                        if ( window.confirm(msg) ) {
+                            scope.$eval(clickAction)
+                        }
+                    });
+                }
+            };
+    }])
 
 function apiURL(path)
 {

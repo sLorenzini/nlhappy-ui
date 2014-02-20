@@ -3,7 +3,7 @@
 		<a href="#/newsletters/{{newsletter.id}}">Newsletter #{{newsletter.number}}</a>
 	</div>
 	<div class="col-lg-6">
-		<button class="btn btn-danger" ng-click="deleteNewsletterById(newsletter.id); reload();">Delete</button>
+		<button class="btn btn-danger" ng-safe-click="deleteNewsletterById(newsletter.id); reload();">Delete</button>
 	</div>
 </div>
 
