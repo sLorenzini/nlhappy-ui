@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-lg-3">
+		<span ng-click="toggleMe()" class="label label-primary">{{message.mkey}}</span>
+	</div>
+	<div class="col-lg-9">
+		<form ng-if="message.id === shared.focused_message_id" class="form-horizontal">
+			<div class="form-group message-translation" ng-repeat="language in languages">
+				<label class="col-lg-1 control-label" for="translation_{{message.id}}_{{language.code}}">
+					{{language.name}}
+				</label>
+				<div class="col-lg-1">
+					<div class="language_flag {{language.code}}">&nbsp;</div>
+				</div>
+				<div class="col-lg-10">
+					<textarea id="translation_{{message.id}}_{{language.code}}" class="form-control" ng-model="message.translations[language.code]" ng-change="saveTranslation(message.id, language.code, message.translations[language.code])"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pull-right">
+					<button ng-click="deleteMessage(message.id)" class="btn btn-danger" type="button">Delete Message</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
