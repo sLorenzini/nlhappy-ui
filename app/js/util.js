@@ -22,3 +22,22 @@ function declareDelayedFunction(scope, name, timeout, body)
 		}, timeout);
 	};
 }
+
+function ignoreFirstCall(callback)
+{
+	var first = true;
+	
+	return function()
+	{
+		if(first)
+		{
+			console.log("FIRST CALL");
+			first = false;
+		}
+		else
+		{
+			console.log("SECOND CALL");
+			callback();
+		}
+	};
+}

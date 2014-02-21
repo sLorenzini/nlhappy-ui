@@ -26,15 +26,36 @@ td.language_flag a{
 	background-repeat: no-repeat;
 }
 
-td.language_flag.en a{background-image: url("../img/usa.png")}
-td.language_flag.fr a{background-image: url("../img/france.png")}
-td.language_flag.es a{background-image: url("../img/spain.png")}
-td.language_flag.de a{background-image: url("../img/german.png")}
-td.language_flag.it a{background-image: url("../img/italy.png")}
-td.language_flag.br a{background-image: url("../img/portuguese.png")}
-td.language_flag.pl a{background-image: url("../img/poland.png")}
-td.language_flag.ru a{background-image: url("../img/russia.png")}
+td.language_flag.en a, div.language_flag.en{background-image: url("../img/usa.png")}
+td.language_flag.fr a, div.language_flag.fr{background-image: url("../img/france.png")}
+td.language_flag.es a, div.language_flag.es{background-image: url("../img/spain.png")}
+td.language_flag.de a, div.language_flag.de{background-image: url("../img/german.png")}
+td.language_flag.it a, div.language_flag.it{background-image: url("../img/italy.png")}
+td.language_flag.br a, div.language_flag.br{background-image: url("../img/portuguese.png")}
+td.language_flag.pl a, div.language_flag.pl{background-image: url("../img/poland.png")}
+td.language_flag.ru a, div.language_flag.ru{background-image: url("../img/russia.png")}
 
+div.language_flag
+{
+	background-repeat: no-repeat;
+	width: 36px;
+	height: 32px;
+}
+
+div.language_name
+{
+	padding-top: 6px;
+}
+
+div.message-translation
+{
+	margin-bottom: 5px;
+}
+
+div.message
+{
+	margin-bottom: 5px;
+}
 
 div.article
 {
@@ -86,4 +107,37 @@ div.article-title{
 	color: #777;
 	font-weight: bold;
 	line-height: 34px;
+}
+
+div.other-col-has-btn
+{
+	padding-top: 7px; 
+}
+
+div.row.spaced
+{
+	margin-bottom: 10px;
+}
+
+input.ng-valid
+{
+	background-color: #F3FFF3;
+}
+
+input.ng-invalid
+{
+	background-color: #FEE;	
+}
+
+input.ng-invalid.ng-pristine
+{
+	background-color: inherit;
+}
+
+form.button-form
+{
+	border: 1px solid #CCC;
+	margin-bottom: 10px;
+	padding: 15px;
+	border-radius: 5px
 }

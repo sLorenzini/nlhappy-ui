@@ -3,6 +3,9 @@ nl.controller('ArticleController', function($scope, $http) {
 	$scope.article_types = ['default', 'footer']
 	$scope.article.title_size = parseInt($scope.article.title_size);
 
+	if ($scope.article.title_size < 24)
+		$scope.article.title_size = 24;
+
 	var first = true;
 	$scope.$watch('article', function() {
 		if(first)
@@ -41,17 +44,17 @@ nl.controller('ArticleController', function($scope, $http) {
 		return parseInt(button.position);
 	}
 
-	$scope.moveUp = function()
+	$scope.moveUp = function(e)
 	{
-		$scope.move(-1);
+		$scope.move(-1, e);
 	};
 
-	$scope.moveDown = function()
+	$scope.moveDown = function(e)
 	{
-		$scope.move(1);
+		$scope.move(1, e);
 	};
 
-	$scope.move = function(delta)
+	$scope.move = function(delta, e)
 	{
 		$http.post(apiURL('/articles/'+$scope.article.id+'/move'), {delta: delta})
 		.success(function (data){
@@ -70,6 +73,9 @@ nl.controller('ArticleController', function($scope, $http) {
 				}
 			}
 		});
+
+		e.stopPropagation();
+		console.log(e);
 	};
 
 	$scope.ucfirst = function(string)

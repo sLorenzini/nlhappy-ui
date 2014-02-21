@@ -42,6 +42,9 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 			.success(function(data) {
 				$scope.newsletter_language = data.data;
 				$scope.newsletter_language.title_size = parseInt(data.data.title_size);
+
+				if($scope.newsletter_language.title_size < 24)
+					$scope.newsletter_language.title_size = 24;
 				
 				var first = true;
 				$scope.$watch('newsletter_language', function () {
@@ -91,13 +94,7 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 
 	$scope.deleteNewsletter = function()
 	{
-		$http.post(apiURL('/newsletters/'+$scope.newsletter.id+'/delete'))
-		.success(function (data) {
-			if(data.success)
-			{
-				$location.path('/newsletters');
-			}
-		});
+		$scope.deleteNewsletterById($scope.newsletter.id);
 	};
 
 	$scope.articleOrderProp = function (article)

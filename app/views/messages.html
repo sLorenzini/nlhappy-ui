@@ -1,0 +1,11 @@
+<form novalidate class="form-horizontal" ng-submit="addMessage()">
+	<div class="form-group">
+		<label for="new_message" class="control-label col-lg-3">New Predefined Message</label>
+		<div class="col-lg-9">
+			<input id="new_message" name="new_message" required type="text" class="form-control" ng-model="new_message">
+			<p class="help-block">Please enter a short description of the purpose of the message, such as "footer text".</p>
+		</div>
+	</div>
+</form>
+
+<div class="message" ng-repeat="(position, message) in messages" ng-controller='MessageController' ng-include="'/views/message.html'"></div>
