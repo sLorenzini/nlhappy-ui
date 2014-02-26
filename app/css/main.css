@@ -5,6 +5,7 @@
 }
 
 .navbar-nav > li > a{padding-top: 13px;}
+.navbar-inverse .navbar-text{color: #ffffff}
 
 /****** main *****/
 div#main{}
@@ -99,14 +100,14 @@ img.medium
 
 div.bottom{margin-top: 20px;}
 
-div.article.focused, div.article:hover{background-color: #FFFFEE;}
+div.article.focused, div.article:hover{background-color: #f7f7f9;}
 
 div.pull-right>button{margin: 15px;}
 
 div.article-title{
 	color: #777;
 	font-weight: bold;
-	line-height: 34px;
+	line-height: 40px;
 }
 
 div.other-col-has-btn
@@ -121,7 +122,7 @@ div.row.spaced
 
 input.ng-valid
 {
-	background-color: #F3FFF3;
+	background-color: #d9ffd9;
 }
 
 input.ng-invalid
@@ -131,12 +132,11 @@ input.ng-invalid
 
 input.ng-invalid.ng-pristine
 {
-	background-color: inherit;
+	background-color: white;
 }
 
 form.button-form
 {
-	border: 1px solid #CCC;
 	margin-bottom: 10px;
 	padding: 15px;
 	border-radius: 5px

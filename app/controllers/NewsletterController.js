@@ -43,9 +43,9 @@ nl.controller('NewsletterController', function($scope, $http, $routeParams, $loc
 				$scope.newsletter_language = data.data;
 				$scope.newsletter_language.title_size = parseInt(data.data.title_size);
 
-				if($scope.newsletter_language.title_size < 24)
+				if(isNaN($scope.newsletter_language.title_size) || $scope.newsletter_language.title_size < 24)
 					$scope.newsletter_language.title_size = 24;
-				
+
 				var first = true;
 				$scope.$watch('newsletter_language', function () {
 					if (first)

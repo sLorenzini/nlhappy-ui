@@ -1,49 +1,49 @@
-<!--td>
-	
-	<BR/>
-	<BR/>
-	
-</td-->
-
 <form class="form-horizontal button-form">
 	<div class="form-group">
 		<label class="control-label col-lg-3" for="url_{{button.id}}">URL</label>
 		<div class="col-lg-9"><input id="url_{{button.id}}" type="text" class="form-control" ng-model="button.url"></div>
+		<p class="help-block col-lg-9 pull-right">Link on the button</p>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-lg-3" for="title_{{button.id}}">Title</label>
 		<div class="col-lg-9"><input id="title_{{button.id}}" required type="text" class="form-control" ng-model="button.title"></div>
+		<p class="help-block col-lg-9 pull-right">Text on the button</p>
 	</div>
 	<div class="form-group">
 		<label for="color_{{button.id}}" class="control-label col-lg-3">Color</label>
 		<div class="col-lg-9"><input id="color_{{button.id}}" required type="color" class="form-control" ng-model="button.style"></div>
+		<p class="help-block col-lg-9 pull-right">Background color on the button</p>
 	</div>
 	<div class="form-group" ng-if="!show_more">
 		<div class="col-lg-9 col-lg-offset-3">
-			<a ng-click='showMore()'>Show more button options</a>
+			<a ng-click='showMore()'><span class="glyphicon glyphicon-plus"></span> Show more button options</a>
 		</div>
 	</div>
 	<div class="form-group" ng-if="show_more">
 		<div class="col-lg-9 col-lg-offset-3">
-			<a ng-click='showLess()'>Show less button options</a>
+			<a ng-click='showLess()'><span class="glyphicon glyphicon-minus"></span> Show less button options</a>
 		</div>
 	</div>
 	<div ng-if="show_more">
 		<div class="form-group">
 			<label for="addons_{{button.id}}" class="control-label col-lg-3">Addons Button</label>
 			<div class="col-lg-9"><div class="checkbox"><input id="addons_{{button.id}}" required type="checkbox" ng-model="button.addons"></div></div>
+			<p class="help-block col-lg-9 pull-right">To check if it's Addons article</p>
 		</div>
 		<div class="form-group">
-			<label for="width_{{button.id}}"  class="control-label col-lg-3">Width</label>
-			<div class="col-lg-9"><input id="width_{{button.id}}" required type="number" class="form-control" ng-model="button.width"></div>
+			<label for="width_{{button.id}}" class="control-label col-lg-3">Width</label>
+			<div class="col-lg-9"><input min="37" id="width_{{button.id}}" required type="number" class="form-control" ng-model="button.width"></div>
+			<p class="help-block col-lg-9 pull-right">Min width: 125. <br/>To use for the button on footer articles <br/> <b>Not necessary for Addons button</b></p>
 		</div>
 		<div class="form-group">
 			<label for="height_{{button.id}}" class="control-label col-lg-3">Height</label>
-			<div class="col-lg-9"><input id="height_{{button.id}}" required type="number" class="form-control" ng-model="button.height"></div>
+			<div class="col-lg-9"><input min="37" id="height_{{button.id}}" required type="number" class="form-control" ng-model="button.height"></div>
+			<p class="help-block col-lg-9 pull-right">Min height: 37. <br/>Use 45 if you have 2 lines on button. <br/> <b>Not necessary for Addons button</b></p>
 		</div>
 		<div class="form-group">
 			<label for="line_height_{{button.id}}" class="control-label col-lg-3">Line-Height</label>
-			<div class="col-lg-9"><input id="line_height_{{button.id}}" required type="number" class="form-control" ng-model="button.line_height"></div>
+			<div class="col-lg-9"><input min="37" id="line_height_{{button.id}}" required type="number" class="form-control" ng-model="button.line_height"></div>
+			<p class="help-block col-lg-9 pull-right">Min line-height: 37. <br/>Use 22 if you have 2 lines on button. <br/> <b>Not necessary for Addons button</b></p>
 		</div>
 	</div>
 	<div class="form-group">

@@ -1,8 +1,8 @@
 <div id="article_{{article.id}}" class="article container {{article.id === shared.focused_article_id ? 'focused' : ''}}">
 	<div class="row" ng-click='toggleFocusedArticle(article.id)'>
-		<div class="col-lg-4"><h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
-		<div class="col-lg-4 article-title text-center">{{article.title || 'Untitled Article'}}</div>
-		<div class="col-lg-4 text-right">
+		<div class="col-lg-3"><h4>{{ucfirst(article.type)}} Article (#{{article.id}})</h4></div>
+		<div class="col-lg-6 article-title text-center">{{article.title || 'Untitled Article'}}</div>
+		<div class="col-lg-3 text-right">
 			<img ng-click="moveUp($event)" src="/img/up.png" title="Move article UP." class="move_article">
 			<img ng-click="moveDown($event)" src="/img/down.png" title="Move article DOWN." class="move_article">
 		</div>
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 		</form>
-
+		<hr/>
 		<h4>Article Image</h4>
 		<div class="form-horizontal">
 			<div class="form-group">
@@ -55,7 +55,7 @@
 				<p class="help-block col-lg-9 pull-right">
 					Name of the image (e.g: training.png,...). <br/> 
 					Max-width of an article image: 285px. <br/>
-					Size of an footer article image: 275px*205px. <br/>
+					Size of footer article image: 275px*205px. <br/>
 					Very important. To send to Sarah to put it on the server
 				</p>
 			</div>
@@ -67,20 +67,18 @@
 				<p class="help-block col-lg-9 pull-right">Name for the image</p>
 			</div>
 		</div>
+		<hr/>
 		<h4>Article Buttons</h4>
 		<div class="form-horizontal">
 			<div class="form-group">
-				<div class="col-lg-9 col-lg-offset-3">
-					<div ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'" class="line_buttons"></div>
-				</div>
+				<div ng-repeat='(pos_in_array, button) in buttons | orderBy:buttonOrderProp' ng-controller='ButtonController' ng-include="'/views/button.html'" class="line_buttons"></div>
 			</div>
 			<div class="form-group">
-				<div class="col-lg-9 col-lg-offset-3">
-					<button ng-click="addButton()" type="button" class="btn btn-default no-margin">Add New Button</button>
+				<div class="col-lg-9 col-lg-offset-2">
+					<button ng-click="addButton()" type="button" class="btn btn-primary no-margin">Add New Button</button>
 				</div>
 			</div>
 		</div>
-
 		<div class="bottom">
 			<div class="row">
 				<div class="pull-right">
