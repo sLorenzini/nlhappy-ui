@@ -1,7 +1,13 @@
 /***** header *****/
+.navbar-inverse .navbar-brand{color:#ffffff;}
+
 .navbar-inverse{
 	background-image: linear-gradient(to bottom, #363a45 0px, #262830 100%);
     position: relative;
+}
+
+.navbar-header ul li{
+    padding-top: 16px;
 }
 
 .navbar-nav > li > a{padding-top: 13px;}
