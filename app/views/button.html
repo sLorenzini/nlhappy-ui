@@ -37,9 +37,9 @@
 		<div class="form-group">
 			<label for="width_{{button.id}}" class="control-label col-lg-3">Width</label>
 			<div class="col-lg-9">
-				<input min="125" id="width_{{button.id}}" required type="number" class="form-control" ng-model="button.width" ng-init="button.width=125">
+				<input min="125" max="170" id="width_{{button.id}}" required type="number" class="form-control" ng-model="button.width" ng-init="button.width=125">
 			</div>
-			<p class="help-block col-lg-9 pull-right">Min width: 125. <br/>To use for the button on footer articles <br/> <b>Not necessary for Addons button</b></p>
+			<p class="help-block col-lg-9 pull-right">Min width: 125. <br/> Max-width: 170. <br/>To use for the button on footer articles <br/> <b>Not necessary for Addons button</b></p>
 		</div>
 		<div class="form-group">
 			<label for="height_{{button.id}}" class="control-label col-lg-3">Height</label>
@@ -51,7 +51,7 @@
 		<div class="form-group">
 			<label for="line_height_{{button.id}}" class="control-label col-lg-3">Line-Height</label>
 			<div class="col-lg-9">
-				<input min="37" id="line_height_{{button.id}}" required type="number" class="form-control" ng-model="button.line_height" ng-init="button.line_height=37">
+				<input min="22" id="line_height_{{button.id}}" required type="number" class="form-control" ng-model="button.line_height" ng-init="button.line_height=37">
 			</div>
 			<p class="help-block col-lg-9 pull-right">Min line-height: 37. <br/>Use 22 if you have 2 lines on button. <br/> <b>Not necessary for Addons button</b></p>
 		</div>
