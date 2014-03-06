@@ -2,6 +2,7 @@ nl.controller('ArticleController', function($scope, $http) {
 	
 	$scope.article_types = ['default', 'footer']
 	$scope.article.title_size = parseInt($scope.article.title_size);
+	$scope.article.summary_height = parseInt($scope.article.summary_height);
 
 	if (isNaN($scope.article.title_size) || $scope.article.title_size < 24)
 		$scope.article.title_size = 24;
