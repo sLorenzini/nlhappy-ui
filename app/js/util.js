@@ -9,16 +9,24 @@ function declareDelayedFunction(scope, name, timeout, body)
 
 	scope[name] = function ()
 	{
-		scope.status.message = "Waiting for "+name+"...";
+		var message = "Waiting for "+name+"...";
+		scope.status.message = message;
 		var handle = delayedFunctionCalls[scope.$id][name];
 		if (handle)
 		{
 			window.clearTimeout(handle);
 		}
 
+		scope.pushMessage(message);
+
 		delayedFunctionCalls[scope.$id][name] = window.setTimeout(function () {
 			scope.status.message = '';
-			scope.$apply(body);
+			scope.$apply(function()
+			{
+				var result = body();
+				var ok = !(result === false || (typeof result === "object" && result.success === false));
+				scope.clearMessage(message, ok);
+			});
 		}, timeout);
 	};
 }
