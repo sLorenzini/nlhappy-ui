@@ -60,7 +60,7 @@
 		<div class="pull-right">
 			<img class="medium" ng-click="moveButtonUp()" src="/img/up.png" title="Move button UP.">
 			<img class="medium" ng-click="moveButtonDown()" src="/img/down.png" title="Move button DOWN.">
-			<button ng-click="deleteButton(pos_in_array, button)" class="btn btn-warning">Delete Button</button>
+			<button ng-safe-click="deleteButton(pos_in_array, button)" class="btn btn-warning">Delete Button</button>
 		</div>
 	</div>
 </form>
