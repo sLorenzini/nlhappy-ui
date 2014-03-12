@@ -147,3 +147,10 @@ form.button-form
 	padding: 15px;
 	border-radius: 5px
 }
+
+#feedback
+{
+	position: fixed;
+	top: 150px;
+	left: 15px;
+}

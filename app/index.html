@@ -29,13 +29,17 @@
 						<li>
 							<a href="/#/messages">Predefined Messages</a>
 						</li>
-						<li>
-							<p class="navbar-text {{status.klass}}">{{status.message}}</p>
-						</li>
 					</ul>
 				</nav>
 			</div>
 		</header>
+
+		<div id="feedback">
+			<div ng-repeat="(index, message) in feedback_messages">
+				<span ng-if="message.status !== 'danger'" class="label label-{{message.status}}">{{message.message}}</span>
+				<span ng-if="message.status === 'danger'" class="label label-{{message.status}}">{{message.message}} <a ng-click='removeMessage(index)'>(x)</a></span>
+			</div>
+		</div>
 
 		<div id="main" class="container">
 			<div ng-view>
