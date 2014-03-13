@@ -23,13 +23,11 @@ nl.controller('MessagesController', function($scope, $http){
 
 	function saveTranslation(message_id, language_code, translation)
 	{
-		console.log(arguments);
-
 		$http.post(apiURL('/messages/'+message_id+'/'+language_code), {
 			translation: translation
 		})
 		.success(function(data){
-
+			$scope.clearMessage('Waiting to save message translation...', true);
 		});
 
 		$scope.status.message = '';
@@ -49,6 +47,8 @@ nl.controller('MessagesController', function($scope, $http){
 		{
 			window.clearTimeout(cb);
 		}
+
+		$scope.pushMessage('Waiting to save message translation...');
 
 		toSave[key] = window.setTimeout(saveTranslation.bind(null, message_id, language_code, translation), 1000);
 	};
