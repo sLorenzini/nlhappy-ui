@@ -23,19 +23,19 @@
 					<input required class="form-control" id="article_title_{{article.id}}" ng-model="article.title">
 				</div>
 			</div>
+			<div class="form-group">
+				<label for="article_title_size_{{article.id}}" class="control-label col-lg-3">Article Title Size (in pixels)</label>
+				<div class="col-lg-9">
+					<input required min="24" id="article_title_size_{{article.id}}" class="form-control" type="number" ng-model="article.title_size">
+				</div>
+				<p class="help-block col-lg-9 pull-right">Min size: 24px</p>
+			</div>
 			<div ng-if="article.type === 'footer'" class="form-group">
 				<label for="article_summary_height_{{article.id}}" class="control-label col-lg-3">Height between text and button (in pixels)</label>
 				<div class="col-lg-9">
 					<input required min="15" id="article_summary_height_{{article.id}}" class="form-control" type="number" ng-model="article.summary_height">
 				</div>
 				<p class="help-block col-lg-9 pull-right">Min height: 15px</p>
-			</div>
-			<div ng-if="article.type === 'footer'" class="form-group">
-				<label for="article_summary_height_{{article.id}}" class="control-label col-lg-3">Summary Height (in pixels)</label>
-				<div class="col-lg-9">
-					<input required min="150" id="article_summary_height_{{article.id}}" class="form-control" type="number" ng-model="article.summary_height">
-				</div>
-				<p class="help-block col-lg-9 pull-right">Min height: 150px</p>
 			</div>
 			<div class="form-group">
 				<label for="article_body_{{article.id}}" class="control-label col-lg-3">Article Body</label>
